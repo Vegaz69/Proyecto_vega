@@ -1,0 +1,48 @@
+CRITICAL - 2025-04-29 08:53:10 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/comercializacion.php"
+[Method: GET, Route: comercializacion]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/comercializacion.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/comercializacion', [], true)
+ 3 APPPATH\Controllers\Home.php(19): view('front/comercializacion')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->comercializacion()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-29 08:53:22 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/comercializacion.php"
+[Method: GET, Route: comercializacion]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/comercializacion.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/comercializacion', [], true)
+ 3 APPPATH\Controllers\Home.php(19): view('front/comercializacion')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->comercializacion()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-29 08:59:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/comercializacion.php"
+[Method: GET, Route: comercializacion]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/comercializacion.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/comercializacion', [], true)
+ 3 APPPATH\Controllers\Home.php(19): view('front/comercializacion')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->comercializacion()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-29 09:01:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/comercializacion.php"
+[Method: GET, Route: comercializacion]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/comercializacion.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/comercializacion', [], true)
+ 3 APPPATH\Controllers\Home.php(19): view('front/comercializacion')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->comercializacion()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
