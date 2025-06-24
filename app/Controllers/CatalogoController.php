@@ -31,8 +31,8 @@ class CatalogoController extends BaseController
         $query = $this->productoModel
                       ->select('productos.*, categorias.nombre AS categoria_nombre')
                       ->join('categorias', 'categorias.id_categoria = productos.id_categoria', 'left')
-                      ->where('productos.activo', 1);
-                      // ->where('productos.stock >', 0); // Opcional: Descomenta si solo quieres mostrar productos con stock > 0
+                      ->where('productos.activo', 1)
+                      ->where('productos.stock >', 0); // Opcional: Descomenta si solo quieres mostrar productos con stock > 0
 
         // 3. Aplicar filtro de búsqueda
         if (!empty($search)) {
@@ -77,7 +77,8 @@ class CatalogoController extends BaseController
         // 7. Obtener todas las categorías activas para el filtro de la vista
         $data['categorias'] = $this->categoriaModel->where('activo', 1)->orderBy('nombre', 'ASC')->findAll();
 
-        return view('productos/catalogo_publico', $data);
+        return view('admin/productos/catalogo_publico', $data);
+
     }
 
     // Método para el detalle del producto
@@ -108,6 +109,7 @@ class CatalogoController extends BaseController
 
         // NO se obtiene 'productos_relacionados' ya que no se desea mostrar esa sección.
 
-        return view('productos/detalle', $data);
+        return view('admin/productos/detalle', $data);
+
     }
 }

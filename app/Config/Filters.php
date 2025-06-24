@@ -28,8 +28,8 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
-        // ¡CRUCIAL! Aquí defines el alias 'auth' que usas en tus rutas
-        'auth'          => AuthFilter::class,
+        
+        'rol' => \App\Filters\RoleFilter::class,
     ];
 
     public array $required = [
@@ -59,11 +59,11 @@ class Filters extends BaseFilters
     public array $methods = [];
 
     // ¡CRUCIAL! Aquí aplicas el filtro 'auth' a las rutas de administrador
-    public array $filters = [
-        'auth' => [
-            'before' => [
-                'admin/*', // Aplica 'auth' a todas las rutas que empiezan con 'admin/'
-            ],
-        ],
-    ];
+    // public array $filters = [
+    //     'auth' => [
+    //         'before' => [
+    //             'admin/*', // Aplica 'auth' a todas las rutas que empiezan con 'admin/'
+    //         ],
+    //     ],
+    // ];
 }

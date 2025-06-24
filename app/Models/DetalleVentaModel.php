@@ -9,10 +9,15 @@ class DetalleVentaModel extends Model
 
     protected $useAutoIncrement = true;
 
-    protected $returnType     = 'array';
-    protected $useSoftDeletes = false; // Detalle de venta no suele tener soft delete
+    protected $allowedFields = [
+        'id_venta',
+        'id_producto',
+        'nombre_producto',
+        'cantidad',
+        'precio_unitario',
+        'subtotal'
+    ];
 
-    protected $allowedFields = ['id_venta', 'id_producto', 'nombre_producto', 'cantidad', 'precio_unitario', 'subtotal'];
-
-    protected $useTimestamps = false; // Detalle de venta no suele tener timestamps propios
+    // No suelen llevar timestamps los detalles de venta si la venta ya los tiene
+    protected $useTimestamps = false;
 }

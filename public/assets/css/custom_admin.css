@@ -1,0 +1,145 @@
+/* Estilos personalizados para la administración */
+
+/* Contenedor principal para la transformación de tabla a lista/modal trigger */
+.messages-list-mobile-view {
+    /* Por defecto, la tabla normal estará visible en pantallas grandes */
+}
+
+@media (max-width: 767.98px) { /* Estilos para pantallas pequeñas (móviles) */
+    .messages-list-mobile-view table {
+        display: none; /* Oculta completamente la tabla normal en móviles */
+    }
+
+    /* Estilos para el contenedor de la lista de mensajes "modal-trigger" */
+    .messages-list-mobile-triggers {
+        display: block; /* Asegura que el contenedor de los triggers se muestre */
+        padding: 0; /* Quita padding por defecto si lo tuviera */
+        margin: 0; /* Quita margen por defecto si lo tuviera */
+    }
+
+    .messages-list-mobile-triggers .message-item-trigger {
+        display: flex; /* Para alinear los elementos de Tipo y Estado */
+        justify-content: space-between; /* Empuja Tipo a la izquierda y Estado a la derecha */
+        align-items: center; /* Alinea verticalmente */
+        width: 100%; /* Ocupa todo el ancho */
+        padding: 0.75rem 1rem; /* Padding interno para cada ítem */
+        margin-bottom: 0.5rem; /* Espacio entre ítems */
+        background-color: #fff; /* Fondo blanco */
+        border: 1px solid #e0e0e0; /* Borde suave */
+        border-radius: 0.25rem; /* Bordes ligeramente redondeados */
+        cursor: pointer; /* Indica que es clickeable */
+        transition: background-color 0.2s ease; /* Transición suave al pasar el mouse/tocar */
+    }
+
+    .messages-list-mobile-triggers .message-item-trigger:hover {
+        background-color: #f8f9fa; /* Color de fondo al pasar el mouse */
+    }
+
+    .messages-list-mobile-triggers .message-item-trigger.fw-bold {
+        /* Para mensajes no leídos, hacer el fondo un poco diferente si se desea */
+        background-color: #eaf1fb; /* Un azul muy suave para nuevos mensajes */
+        border-color: #c9dff7;
+    }
+
+    .messages-list-mobile-triggers .message-item-trigger .message-type-badge {
+        font-size: 0.75em; /* Tamaño más pequeño para el badge de tipo */
+        margin-right: 0.5rem;
+    }
+
+    .messages-list-mobile-triggers .message-item-trigger .message-status-text {
+        font-size: 0.8em; /* Tamaño más pequeño para el texto de estado */
+    }
+
+    .messages-list-mobile-triggers .message-item-trigger .message-status-icon {
+        font-size: 0.9em; /* Icono un poco más grande */
+        margin-right: 0.25rem;
+    }
+}
+
+/* En pantallas grandes (md y arriba), ocultamos el modo móvil */
+@media (min-width: 768px) {
+    .messages-list-mobile-view table {
+        display: table; /* Muestra la tabla normal */
+    }
+    .messages-list-mobile-triggers {
+        display: none; /* Oculta el contenedor de los triggers móviles */
+    }
+}
+
+/* Estilos para el modal de mensajes */
+#modalMensaje {
+    max-height: 300px; /* Ajusta esta altura según lo que consideres adecuado */
+    overflow-y: auto;  /* Esto genera la barra de desplazamiento vertical */
+    white-space: pre-wrap; /* Permite que el texto se envuelva y respete saltos de línea */
+    word-wrap: break-word; /* Rompe palabras largas para evitar desbordamiento horizontal */
+    padding-right: 10px; /* Para dar un pequeño espacio si aparece la barra de scroll */
+}
+
+
+
+/*VENTAS*/
+
+/* Estilos para la vista de Ventas en Móviles */
+/* Oculta la tabla tradicional en pantallas pequeñas */
+@media (max-width: 767.98px) {
+    .table-responsive.d-md-block {
+        display: none !important;
+    }
+}
+
+/* Muestra los triggers de mensajes en pantallas pequeñas */
+@media (min-width: 768px) {
+    .sales-list-mobile-view {
+        display: none !important;
+    }
+}
+
+/* Estilos para los elementos de venta en móvil (las "tarjetas") */
+.sale-item-trigger {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #e0e0e0; /* Un borde sutil */
+}
+
+.sale-item-trigger:hover {
+    background-color: #f8f9fa; /* Color de fondo al pasar el ratón */
+    border-color: #cce5ff; /* Borde más claro */
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important; /* Sombra ligera */
+}
+
+/* Estilo para el ícono de flecha (opcional, si quieres un indicador) */
+/* .sale-item-trigger .card-body::after {
+    content: "\f0d7"; // Unicode para fa-caret-down
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.sale-item-trigger[aria-expanded="true"] .card-body::after {
+    transform: rotate(180deg);
+} */
+
+/* Asegurar que el contenido dentro de la tarjeta se vea bien */
+.sale-main-info h6 {
+    line-height: 1.2;
+}
+
+.sale-main-info small {
+    line-height: 1.4;
+}
+
+.sale-summary-info .badge {
+    display: block; /* Para que el badge ocupe su propia línea si es necesario */
+    margin-bottom: 5px;
+}
+
+/* Ajustes para la tabla de detalles dentro del colapsable móvil */
+.collapse .card-body ul.list-group-flush {
+    border-top: 1px solid rgba(0,0,0,.125); /* Un separador visual para la lista */
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.collapse .card-body ul.list-group-flush .list-group-item {
+    border-color: rgba(0,0,0,.05); /* Borde más sutil entre items */
+}

@@ -10,14 +10,13 @@ class AdminController extends BaseController
      * Muestra el panel principal de administración.
      * Requiere que el usuario esté autenticado y tenga rol de administrador.
      */
-    public function dashboard()
+        public function dashboard()
     {
-        // Carga cualquier dato que desees mostrar en el dashboard (ej. estadísticas)
-        $data = [
-            'titulo' => 'Panel de Administración',
-            // Puedes añadir más datos aquí
-        ];
+        if (!session()->get('isLoggedIn') || session()->get('rol') !== 'admin') {
+            return redirect()->to('login');
+        }
 
-        return view('admin/dashboard', $data);
+        return view('admin/dashboard');
     }
-}
+
+}   
