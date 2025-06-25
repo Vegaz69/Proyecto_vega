@@ -1,0 +1,78 @@
+CARACTERISTICAS GENERALES
+Socket
+1851 Arrow Lake
+Chipsets Principal
+Intel Z890
+Plataforma
+Intel
+Boton Bios Flashback
+Si
+Back Connect
+No
+CONECTIVIDAD
+Cantidad De Slot Pci-e 16x
+1
+Cantidad De Slot Pci-e 1x
+0
+Tecnología Multi Gpu
+0
+Salidas Vga
+0
+Salidas Hdmi
+1
+Salidas Dvi
+0
+Salidas Display Ports
+0
+Cantidad De Slot M.2 Totales
+5
+Cantidad De Slot M.2 Nvme
+5
+Cantidad De Slot M.2 Sata
+1
+Puertos Sata
+4
+Placa Wifi Integrada
+Si
+Placa De Red
+2.5 Gb/s
+Puertos Usb 2.0 Traseros
+2
+Puertos Usb 3.0 Traseros
+0
+Puertos Usb 3.1 Traseros
+0
+Sistema De Conexión Rgb
+ARGB Header,RGB Header
+Puerto Ps/2
+No
+Puertos Usb 3.2 Traseros
+6
+Puertos Usb Type-c
+2
+Cantidad De Slot Pci-e 4x
+1
+DIMENSIONES
+Factor
+ATX
+ENERGIA
+Conector 24pines
+1
+Consumo
+50 w
+Conectos Cpu 4pines
+1
+Conector Cpu 4pines Plus
+1
+Watts Máximos Para Cpu
+125
+Procesador Integrado
+No
+MEMORIA
+Tipo De Memoria
+DDR5
+Cantidad De Slot De Memorias
+4
+SONIDO
+Placa De Sonido
+7.1 Realtek ALC 1220

@@ -1,0 +1,99 @@
+CARACTERISTICAS GENERALES
+Factor Mother
+ITX,M-ATX,ATX
+Con Ventana
+Si
+Tipo De Ventana
+Vidrio templado
+Colores
+Blanco
+Fuente En Posición Superior
+No
+Tamaño Del Gabinete
+Mid Tower
+Apto Para Mothers Back Connect
+No
+CONECTIVIDAD
+Usb 2.0 Frontal
+0
+Usb 3.0 Frontal
+2
+Usb Tipo C
+0
+Usb Tipo C Interno
+0
+Audio Hd Frontal
+Si
+Lector De Tarjetas Frontal
+No
+DIMENSIONES
+Ancho
+230 mm
+Alto
+466 mm
+Profundidad
+462 mm
+Largo Máximo Vga
+360 mm
+Altura Máxima Del Cooler Cpu
+170.00 mm
+UNIDADES SOPORTADAS
+Unidades 5.25'' Soportadas
+0
+Cantidad De Slots
+7
+Unidades 2.5'' Soportadas
+2
+Unidades 3.5'' Soportadas
+2
+Unidades 3.25'' Soportadas
+0
+ENERGIA
+Tipo De Fuente Admitida
+ATX
+COOLERS Y DISIPADORES
+Coolers Fan De 80mm Soportados
+0
+Coolers Fan De 80mm Incluidos
+0
+Coolers Fan De 120mm Soportados
+8
+Coolers Fan De 120mm Incluidos
+2
+Coolers Fan De 140mm Soportados
+4
+Coolers Fan De 140mm Incluidos
+0
+Coolers Fan De 200mm Soportados
+0
+Coolers Fan De 200mm Incluidos
+0
+Soporte Radiador 240mm
+1
+Soporte Radiador 280mm
+2
+Soporte Radiador 360mm
+1
+Soporte Radiador 420mm
+0
+Iluminación
+No Incluye
+Controlador De La Iluminación
+No
+Espacio Para Radiador Water
+Si
+DETALLE DEL KIT
+Incluye Kit De Perifericos
+No
+Incluye Fuente Kit
+No
+ACCESORIOS
+Soporta Gpu Vertical
+No
+Riser Incluido
+No
+Cover Para La Fuente
+Si
+EXTRAS
+Sistema De Conexión Rgb
+No incluye

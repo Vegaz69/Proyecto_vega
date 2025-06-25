@@ -1,0 +1,30 @@
+CARACTERISTICAS GENERALES
+Modelo
+Ryzen 7 9800X3D
+Socket
+AM5 Ryzen 9000
+Proceso De Fabricación
+6 nm
+Chipset Gpu
+AMD Radeon Graphics
+Familia
+AMD RYZEN 7
+ESPECIFICACIONES DE LA CPU
+Núcleos
+8
+Frecuencia
+4700.00 mhz
+Hilos
+16
+Frecuencia Turbo
+5200 mhz
+COOLERS Y DISIPADORES
+Incluye Cooler Cpu
+No
+Tdp Predeterminada
+200 w
+MEMORIA
+L2
+8 mb
+L3
+96 mb

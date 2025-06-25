@@ -1,0 +1,110 @@
+Notebook Acer Aspire Go 15 AG15-31P-3947 15.6" i3-N305 8GB SSD 128GB FHD Win11
+CARACTERISTICAS GENERALES
+Color
+Plateado
+Tipo
+Notebook
+Sistema Operativo
+Windows 11 Home
+Batería Extraible
+No
+Idioma Sistema Operativo
+Ingles
+Tipo De Cpu
+Intel
+Modelo Cpu
+Core i3 N305
+Tipo De Gpu
+Intel Integrated Graphics
+Modelo Gpu
+Intel UHD Graphics
+Lector De Huellas
+No
+Familia Del Procesador
+Intel Core i3
+
+CONECTIVIDAD
+Puertos Hdmi
+1
+Puertos Mini Hdmi
+0
+Puerto Mini Dp
+0
+Puertos Usb 2.0 Tipo A
+0
+Puertos Usb 3.0 Tipo A
+0
+Puertos Usb 3.2 Tipo A
+2
+Puertos Usb 3.2 Tipo C
+1
+Puertos Ethernet
+No
+Bluetooth
+Si
+Wifi
+Norma AX
+Tipo De Thunderbolt
+No incluye
+Cantidad De Puertos Thunderbolt
+0
+
+DIMENSIONES
+Peso
+1.8 kg
+Ancho
+363 mm
+Profundidad
+248 mm
+Alto
+18 mm
+
+ALMACENAMIENTO
+Capacidad Hd
+0 gb
+Slot M2
+Si
+Tipo De M.2
+NVME
+Capacidad Sólido
+128 gb
+Lector De Memorias
+No
+
+PANTALLA
+Tamaño De La Pantalla
+15.60 "
+Tipo De Display
+IPS
+Resolución
+1920x1080
+Touch
+No
+Frecuencia De Actualizacion
+60 hz
+
+MEMORIA
+Formato De Memorias
+LPDDR5
+Generación De Memorias
+DDR5
+Ram Soldada
+8 gb
+Slot 1 Ram Disponible
+No
+Slot 2 Ram Disponible
+No
+Ram Máxima
+8
+
+EXTRAS
+Lectora
+Sin optico
+Idioma Del Teclado
+Ingles
+Iluminación Del Teclado
+No
+Pad Númerico
+Si
+Webcam
+Si

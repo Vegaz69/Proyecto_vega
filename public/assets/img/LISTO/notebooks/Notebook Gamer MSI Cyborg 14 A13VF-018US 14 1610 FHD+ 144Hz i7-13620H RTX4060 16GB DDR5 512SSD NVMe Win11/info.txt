@@ -1,0 +1,115 @@
+CARACTERISTICAS GENERALES
+Color
+Negro
+Tipo
+Notebook
+Sistema Operativo
+Windows 11 Home
+Batería Extraible
+No
+Idioma Sistema Operativo
+Multiples Idiomas
+Tipo De Cpu
+Intel
+Modelo Cpu
+Core i7 13620H
+Tipo De Gpu
+Nvidia GeForce
+Modelo Gpu
+GeForce RTX 4060
+Memoria Gpu
+8 gb
+Lector De Huellas
+No
+Familia Del Procesador
+Intel Core i7
+
+CONECTIVIDAD
+Puertos Hdmi
+1
+Puertos Mini Hdmi
+0
+Puerto Mini Dp
+0
+Puertos Usb 2.0 Tipo A
+0
+Puertos Usb 3.0 Tipo A
+0
+Puertos Usb 3.2 Tipo A
+2
+Puertos Usb 3.2 Tipo C
+1
+Puertos Ethernet
+Si
+Bluetooth
+Si
+Wifi
+Norma AX
+Tipo De Thunderbolt
+No incluye
+Cantidad De Puertos Thunderbolt
+0
+
+DIMENSIONES
+Peso
+2 kg
+Ancho
+314 mm
+Profundidad
+233 mm
+Alto
+22 mm
+
+ALMACENAMIENTO
+Capacidad Hd
+0 gb
+Slot M2
+Si
+Tipo De M.2
+NVME
+Capacidad Sólido
+512 gb
+Lector De Memorias
+No
+
+PANTALLA
+Tamaño De La Pantalla
+14.00 "
+Tipo De Display
+IPS
+Resolución
+1920x1200
+Touch
+No
+Frecuencia De Actualizacion
+144 hz
+
+MEMORIA
+Formato De Memorias
+SODIMM
+Generación De Memorias
+DDR5
+Slot 1 Ram Disponible
+No
+Ram En El Slot 1
+8 gb
+Slot 2 Ram Disponible
+No
+Ram En El Slot 2
+8 gb
+Ram Máxima
+32
+
+EXTRAS
+Lectora
+Sin optico
+Idioma Del Teclado
+Ingles
+Iluminación Del Teclado
+Si
+Pad Númerico
+Si
+Webcam
+Si
+Color De La Iluminación Del Teclado
+Azul

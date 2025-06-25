@@ -1,0 +1,34 @@
+CARACTERISTICAS GENERALES
+Modelo
+Ryzen 5 9600X
+Socket
+AM5 Ryzen 9000
+Proceso De Fabricación
+6 nm
+Chipset Gpu
+AMD Radeon Graphics
+Familia
+AMD RYZEN 5
+Requiere Gpu Obligatoria
+No
+Generación De Memorias Compatibles
+DDR5
+ESPECIFICACIONES DE LA CPU
+Núcleos
+6
+Frecuencia
+3900.00 mhz
+Hilos
+12
+Frecuencia Turbo
+5400 mhz
+COOLERS Y DISIPADORES
+Incluye Cooler Cpu
+No
+Tdp Predeterminada
+105 w
+MEMORIA
+L2
+6 mb
+L3
+32 mb

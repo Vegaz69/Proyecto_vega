@@ -1,0 +1,32 @@
+OPERATING SYSTEM	Windows 11 Home
+(MSI recommends Windows 11 Pro for business)
+Manufacturer Number	VECTOR16HXA2050
+Product Condition	New
+CPU	Intel® Core™ Ultra 9-275HX
+Processor Speed	2.1 - 5.4 GHz
+Chipset	-
+Graphics	NVIDIA® GeForce RTX™ 5080 Laptop GPU
+Video Memory	16G GDDR7
+Memory	16GB (8GB*2) DDR5 5600MHz
+LAN	GB LAN (Up to 2.5G)
+Wireless LAN	Intel Wi-Fi 6E AX211(2*2 ax)
+Bluetooth	BT 5.3
+Video Port	1 x HDMI 2.1 (8K@60 / 4K@120)
+USB	2 x USB 3.2 Gen 2
+Audio Port	1 Audio Combo (1/8")
+TYPE-C PORT	2 x Thunderbolt™ 5 w/DP &PD1.4
+SSD HDD	1TB NVMe SSD Gen4x4
+Optical Drive	-
+Card Reader	SD 7.0
+Webcam	IR FHD w/shutter
+VR Ready	Yes
+Keyboard	SteelSeries 24 zone RGB with Anti-Ghost key (99 Key)
+Speaker	2 x 2W Speakers
+AC Power Adapter	330W
+Battery Pack	4 cell (90Whr) Li-Ion
+Screen Size	16" QHD+ Wide View Angle 240Hz Thin Bezel 100% DCI-P3
+Resolution	(2560x1600) 16:10
+Color	Cosmo Gray
+Dimensions	14.05" x 11.18" x 1.12"
+Weight	5.95 lbs
+Manufacturer Warranty	1 year Limited warranty (Include 1 Year Global)

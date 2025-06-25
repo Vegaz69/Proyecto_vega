@@ -1,0 +1,184 @@
+/* Para el texto del carrusel sobre la imagen */
+.shadow-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Efecto hover para las tarjetas de marcas */
+.transform-on-hover {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.transform-on-hover:hover {
+    transform: translateY(-5px); /* Pequeño levantamiento */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; /* Sombra más grande al pasar el ratón */
+}
+
+/* Efecto hover para los enlaces de categoría */
+.hover-lift {
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+.hover-lift:hover {
+    transform: translateY(-3px); /* Levanta un poco */
+    background-color: rgba(255,255,255,0.1) !important; /* Ligeramente más claro al pasar el ratón */
+}
+
+
+/* Back-to-Top Button (posición abajo a la DERECHA) */
+.back-to-top {
+    position: fixed;
+    bottom: 60px; /* Distancia desde abajo */
+    right: 20px; /* ¡¡¡CAMBIADO A RIGHT AQUI!!! */
+    z-index: 1030; /* Asegura que esté por encima de otros elementos */
+    width: 50px; /* Tamaño del botón circular */
+    height: 50px; /* Tamaño del botón circular */
+    display: flex; /* Para centrar el icono */
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; /* Tamaño del icono */
+    opacity: 0.8; /* Ligeramente transparente */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.back-to-top:hover {
+    opacity: 1; /* Opacidad completa al pasar el ratón */
+}
+
+/* Mantén también el CSS de los iconos sociales */
+.social-icon {
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px) scale(1.1); /* Ligeramente levantado y más grande */
+    color: var(--bs-warning) !important; /* Color warning de Bootstrap (amarillo) */
+}
+
+/* Efecto hover para los nav-links */
+.hover-light:hover {
+    color: #fff !important; /* Blanco puro al pasar el ratón */
+}
+
+/* Si usas la barra de búsqueda comentada */
+.form-control.rounded-pill-start {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.btn.rounded-pill-end {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+/* Estilos para la vista del Carrito de Compras (Versión Simplificada) */
+
+/* General */
+.container.my-5 {
+    padding-top: 2rem; /* Reducir un poco el padding superior/inferior del contenedor */
+    padding-bottom: 2rem;
+}
+
+/* Ajuste del título */
+h1.text-center {
+    font-size: 2.5rem; /* Asegura que el título no sea excesivamente grande */
+}
+
+/* Tarjetas */
+.card.shadow-sm {
+    border-radius: 0.5rem; /* Un poco menos redondeado que antes */
+    transition: box-shadow 0.2s ease-in-out; /* Solo transición para la sombra */
+}
+.card.shadow-sm:hover {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08) !important; /* Sombra más sutil al hover */
+}
+
+/* Encabezados de Card */
+.card-header.bg-light, .card-header.bg-primary {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125); /* Borde inferior sutil */
+}
+
+/* Imagen del producto en el carrito */
+.img-thumbnail {
+    border: 1px solid #dee2e6; /* Borde estándar de Bootstrap */
+    border-radius: 0.25rem; /* Bordes estándar de Bootstrap */
+    padding: 0.25rem;
+}
+.img-thumbnail[style] { /* Para sobrescribir los estilos inline y asegurar consistencia */
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: cover !important;
+}
+
+/* Input de Cantidad */
+.form-control-sm[style] { /* Para sobrescribir el ancho inline si es necesario */
+    width: 70px !important;
+}
+
+/* Botones dentro de la tabla */
+.btn-sm.btn-outline-primary, .btn-sm.btn-outline-danger {
+    border-radius: 0.25rem; /* Bordes estándar para un look más simple */
+}
+
+/* Estilo para el hover de las filas de la tabla */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.03); /* Fondo para filas impares */
+}
+.table-striped tbody tr:hover {
+    background-color: #e2f0fe; /* Un color de hover más sutil y fresco */
+}
+
+/* Botones en el footer de la tarjeta de la tabla y resumen */
+.btn-lg {
+    padding: 0.5rem 1rem; /* Padding estándar para botones grandes */
+    font-size: 1rem; /* Tamaño de fuente estándar */
+}
+
+/* Eliminar animaciones agresivas */
+.animate__pulse.animate__infinite {
+    animation: none !important; /* Desactivar la animación de pulso */
+}
+.animated-button-zoom {
+    transition: transform 0.1s ease-in-out; /* Transición más corta */
+}
+.animated-button-zoom:hover {
+    transform: none; /* Desactivar el zoom al pasar el mouse si no lo deseas */
+    box-shadow: none !important;
+}
+
+
+/* Asegurar que el mensaje de carrito vacío esté centrado y atractivo */
+.alert-info.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Estilos para los íconos de categorías */
+.category-icon {
+    width: 32px;  /* Tamaño base para móviles (xs) */
+    height: 32px;
+}
+
+/* Para pantallas medianas (md) y superiores */
+@media (min-width: 768px) {
+    .category-icon {
+        width: 48px;  /* Tamaño más grande para desktop */
+        height: 48px;
+    }
+}
+
+/* Estilos para el ícono dentro del botón "Ver todas las categorías" */
+.button-arrow-icon {
+    width: 18px; /* Tamaño base para móviles (xs) */
+    height: 18px;
+}
+
+/* Para pantallas medianas (md) y superiores */
+@media (min-width: 768px) {
+    .button-arrow-icon {
+        width: 20px; /* Tamaño más grande para desktop */
+        height: 20px;
+    }
+}
+
+

@@ -1,0 +1,78 @@
+CARACTERISTICAS GENERALES
+Socket
+AM5 Ryzen 7000,AM5 Ryzen 8000,AM5 Ryzen 9000
+Chipsets Principal
+AMD X870E
+Plataforma
+AMD
+Boton Bios Flashback
+Si
+Back Connect
+No
+CONECTIVIDAD
+Cantidad De Slot Pci-e 16x
+2
+Cantidad De Slot Pci-e 1x
+0
+Tecnología Multi Gpu
+0
+Salidas Vga
+0
+Salidas Hdmi
+1
+Salidas Dvi
+0
+Salidas Display Ports
+0
+Cantidad De Slot M.2 Totales
+5
+Cantidad De Slot M.2 Nvme
+5
+Cantidad De Slot M.2 Sata
+0
+Puertos Sata
+4
+Placa Wifi Integrada
+Si
+Placa De Red
+5 Gb/s
+Puertos Usb 2.0 Traseros
+0
+Puertos Usb 3.0 Traseros
+0
+Puertos Usb 3.1 Traseros
+0
+Sistema De Conexión Rgb
+ARGB Header
+Puerto Ps/2
+No
+Puertos Usb 3.2 Traseros
+6
+Puertos Usb Type-c
+4
+Cantidad De Slot Pci-e 4x
+0
+DIMENSIONES
+Factor
+ATX
+ENERGIA
+Conector 24pines
+1
+Consumo
+50 w
+Conectos Cpu 4pines
+1
+Conector Cpu 4pines Plus
+1
+Watts Máximos Para Cpu
+170
+Procesador Integrado
+No
+MEMORIA
+Tipo De Memoria
+DDR5
+Cantidad De Slot De Memorias
+4
+SONIDO
+Placa De Sonido
+7.1 ROG SupremeFX ALC4082 CODEC

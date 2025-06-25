@@ -23,24 +23,51 @@ class CategoriaController extends BaseController // Se extiende de BaseControlle
     {
         $categoriaModel = new CategoriaModel();
 
-        // Obtener categorías activas con paginación (si quieres)
-        $data['categorias'] = $categoriaModel->where('activo', 1)->findAll(); // O paginate(10); si quieres paginación
+        // 🔍 Obtener el parámetro de filtro por nombre (desde el input name="nombre")
+        $filtroNombre = $this->request->getGet('nombre');
+        
+        // Obtener parámetro de ordenamiento
+        $orden = $this->request->getGet('orden') ?? 'asc';
+        $orden = ($orden === 'desc') ? 'desc' : 'asc'; // Validación segura
 
-        // Obtener categorías desactivadas (eliminadas lógicamente)
-        $data['categoriasEliminadas'] = $categoriaModel->where('activo', 0)->findAll();
+        // 🎯 Armado de consulta base para categorías activas
+        $queryActivas = $categoriaModel;
 
-        // Si usas paginación para las activas, también pasa el pager:
-        // $data['pager'] = $categoriaModel->pager; 
+        if (!empty($filtroNombre)) {
+            $queryActivas = $queryActivas->like('nombre', $filtroNombre, 'both'); // 'both' busca en cualquier parte del string
+        }
 
-        // Retornar la vista del listado de categorías para el administrador
-        return view('/categorias/listar', $data);
+        // 🔽 Categorías activas ordenadas por nombre
+        $data['categorias'] = $queryActivas
+            ->where('activo', 1)
+            ->orderBy('nombre', $orden)
+            ->findAll();
+
+        // 🎯 Armado de consulta base para categorías desactivadas
+        $queryDesactivadas = $categoriaModel;
+
+        if (!empty($filtroNombre)) {
+            $queryDesactivadas = $queryDesactivadas->like('nombre', $filtroNombre, 'both'); // Mismo filtro para desactivadas
+        }
+
+        // 🔽 Categorías desactivadas también ordenadas
+        $data['categoriasEliminadas'] = $queryDesactivadas
+            ->where('activo', 0)
+            ->orderBy('nombre', $orden)
+            ->findAll();
+
+        // 🧠 Variables para mantener valores en la vista
+        $data['filtro_nombre'] = $filtroNombre; // Ahora se llama filtro_nombre
+        $data['orden'] = $orden;
+
+        return view('admin/categorias/listar', $data);
     }
 
     // Muestra el formulario para crear una nueva categoría
     public function crear()
     {
         // Simplemente carga la vista del formulario vacío
-        return view('/categorias/crear');
+        return view('admin/categorias/crear');
     }
 
     // Guarda una nueva categoría en la base de datos (o actualiza una existente)
@@ -65,14 +92,14 @@ class CategoriaController extends BaseController // Se extiende de BaseControlle
             ],
         ];
 
-            if (!empty($id)) {
-                // Si estamos EDITANDO, la regla debe excluir el propio ID del registro actual
-                // Aquí pasamos el valor real de $id, no el placeholder {id_categoria}
-                $rules['nombre'] .= '|is_unique[categorias.nombre,id_categoria,' . $id . ']';
-                } else {
-                // Si estamos CREANDO una nueva categoría, simplemente comprobamos la unicidad
-                $rules['nombre'] .= '|is_unique[categorias.nombre]';
-    }
+        if (!empty($id)) {
+            // Si estamos EDITANDO, la regla debe excluir el propio ID del registro actual
+            // Aquí pasamos el valor real de $id, no el placeholder {id_categoria}
+            $rules['nombre'] .= '|is_unique[categorias.nombre,id_categoria,' . $id . ']';
+        } else {
+            // Si estamos CREANDO una nueva categoría, simplemente comprobamos la unicidad
+            $rules['nombre'] .= '|is_unique[categorias.nombre]';
+        }
 
         // Validar la solicitud
         if (!$this->validate($rules, $messages)) {
@@ -83,7 +110,7 @@ class CategoriaController extends BaseController // Se extiende de BaseControlle
         // Preparar los datos para guardar
         $data = [
             'nombre' => $this->request->getPost('nombre'),
-            'activo' => 1 
+            'activo' => 1
         ];
 
 
@@ -106,14 +133,13 @@ class CategoriaController extends BaseController // Se extiende de BaseControlle
 
         if (!$categoria) {
             return redirect()->to(base_url('admin/categorias'))->with('error', 'La categoría no existe.');
+        
         }
 
         $data['categoria'] = $categoria;
-        return view('/categorias/editar', $data);
+        return view('admin/categorias/editar', $data);
     }
 
-    // Elimina una categoría (¡Eliminación física!)
-    // Opcional: Podrías cambiarlo a eliminación lógica (marcar 'activo' a 0 si tuvieras ese campo)
     // Elimina una categoría (¡Ahora es eliminación Lógica!)
     public function eliminar($id)
     {
@@ -131,7 +157,7 @@ class CategoriaController extends BaseController // Se extiende de BaseControlle
     }
 
 
-        // Nuevo método para restaurar una categoría
+    // Nuevo método para restaurar una categoría
     public function restaurar($id)
     {
         $categoriaModel = new CategoriaModel();

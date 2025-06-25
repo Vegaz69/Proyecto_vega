@@ -1,0 +1,58 @@
+CARACTERISTICAS GENERALES
+Tipo De Iluminación: EDGE
+Tipo De Panel: IPS
+Pantalla Curva: No
+
+CONECTIVIDAD
+Total De Puertos Hdmi: 1
+Total De Puertos Display Port: 1
+Mini Display Port: 0
+Vga: 0
+Dvi: 0
+Puertos Usb 2.0: 0
+Puertos Usb 3.0: 0
+Puertos Usb 3.1: 0
+Conexión 3.5 Mm - Entrada: No
+Conector Auriculares: Si
+
+DIMENSIONES
+Ancho: 689 mm
+Alto: 313 mm
+Espesor: 79 mm
+Curvatura: 0 r
+
+ENERGIA
+Consumo Máximo: 28 w
+Tipo De Fuente: externa
+
+PANTALLA
+Pulgadas: 29 "
+Pulgadas Visibles: 29 "
+Resolución Máxima: 2560x1080
+Hdr: 0
+Máxima Frecuencia: 75 hz
+Cantidad De Colores: 16.7 m
+Tiempo De Respuesta: 1 ms
+Angulo De Visión Horizontal: 178 º
+Angulo De Visión Vertical: 178 º
+Pantalla Touch: No
+Caracteristicas Especiales: 0
+Nvidia G-sync: No
+Amd Freesync: No
+Radio De Contraste Estático: 1000 :1
+
+DETALLE DEL KIT
+Cantidad De Parlantes: 2
+Potencia Por Parlante: 7.00 w
+Sintonizador Analógico: No
+Smart Integrado: No
+Sistema Operativo: 0
+Pie Desmontable: Si
+Display Inalámbrico: No
+
+ACCESORIOS
+Control Remoto: No
+
+EXTRAS
+Vesa: 100x100
+Peso Sin Base: 4 kg

@@ -5,34 +5,11 @@
     object-fit: cover;
 }
 
-
 body, html {
-    background: linear-gradient(to bottom, #e3e3e3, #ffffff);
-   /* margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Evitar desplazamiento horizontal */*/
+    background: linear-gradient(to bottom, #cfcfcf, #eaeaea);
 }
-/*.card {*/
-    max-width: 220px; /* Tamaño más compacto */
-    min-height: 320px; /* Ajusta altura */
-    padding: 10px; /* Menos espacio interno */
-}
-/*.card-img-top {*/
-    height: 120px; /* Imagen más pequeña */
-    object-fit: cover;
-}
-/*.card-body {*/
-    padding: 8px;
-}
-/*.card-title {*/
-    font-size: 0.9rem; /* Texto más compacto */
-}
-/*.text-primary {*/
-    font-size: 0.95rem; /* Precio más pequeño */
-}
-/*.btn-sm {*/
-    font-size: 0.8rem;
-}
+
+
 
 .card-img-top {
     width: 100%; /* Asegura que ocupe todo el espacio disponible */
