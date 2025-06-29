@@ -84,7 +84,7 @@ in SYSTEMPATH\Filters\Filters.php on line 842.
 CRITICAL - 2025-06-12 06:06:16 --> ParseError: syntax error, unexpected token ")", expecting variable
 [Method: GET, Route: admin/dashboard]
 in APPPATH\Filters\RoleFilter.php on line 18.
- 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Filters\\RoleFilter.php')
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\TryHardWare\\app\\Filters\\RoleFilter.php')
  2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Filters\\RoleFilter')
  3 SYSTEMPATH\Filters\Filters.php(299): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Filters\\RoleFilter')
  4 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\RoleFilter')
@@ -148,7 +148,7 @@ CRITICAL - 2025-06-12 08:04:15 --> Error: Class "Model" not found
 [Method: POST, Route: registro]
 in APPPATH\Models\UserModel.php on line 2.
  1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
- 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Models\\UserModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\TryHardWare\\app\\Models\\UserModel.php')
  3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\UserModel')
  4 APPPATH\Controllers\AuthController.php(22): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\UserModel')
  5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
@@ -162,7 +162,7 @@ DEBUG - 2025-06-12 08:05:24 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-12 08:05:33 --> ParseError: syntax error, unexpected token "<", expecting end of file
 [Method: POST, Route: registro]
 in APPPATH\Models\UserModel.php on line 2.
- 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Models\\UserModel.php')
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\TryHardWare\\app\\Models\\UserModel.php')
  2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\UserModel')
  3 APPPATH\Controllers\AuthController.php(22): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\UserModel')
  4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
@@ -173,23 +173,23 @@ in APPPATH\Models\UserModel.php on line 2.
  9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 DEBUG - 2025-06-12 08:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-12 08:05:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2025-06-12 08:05:57 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php:327
+ERROR - 2025-06-12 08:05:57 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php:327
 Stack trace:
-#0 C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
-#1 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
-#2 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
-#3 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
-#4 C:\xampp\htdocs\Proyecto_vega\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
-#5 C:\xampp\htdocs\Proyecto_vega\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
-#6 C:\xampp\htdocs\Proyecto_vega\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, false)
-#7 C:\xampp\htdocs\Proyecto_vega\system\BaseModel.php(750): CodeIgniter\Model->insert(Array, false)
-#8 C:\xampp\htdocs\Proyecto_vega\app\Controllers\AuthController.php(28): CodeIgniter\BaseModel->save(Array)
-#9 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
-#10 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
-#11 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#12 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
-#13 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-#14 C:\xampp\htdocs\Proyecto_vega\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#0 C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\TryHardWare\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\TryHardWare\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\TryHardWare\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\TryHardWare\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\TryHardWare\system\BaseModel.php(750): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\TryHardWare\app\Controllers\AuthController.php(28): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#10 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\TryHardWare\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\TryHardWare\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\TryHardWare\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #15 {main}
 CRITICAL - 2025-06-12 08:05:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
 [Method: POST, Route: registro]
@@ -537,8 +537,8 @@ DEBUG - 2025-06-12 11:55:57 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-12 11:55:57 --> ErrorException: Undefined array key "id_usuario"
 [Method: GET, Route: admin/usuarios]
 in APPPATH\Views\admin\usuarios\listar.php on line 41.
- 1 APPPATH\Views\admin\usuarios\listar.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_usuario"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php', 41)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php')
+ 1 APPPATH\Views\admin\usuarios\listar.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_usuario"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php', 41)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/usuarios/listar', [], true)
  5 APPPATH\Controllers\UsuarioController.php(22): view('admin/usuarios/listar', [...])
@@ -552,8 +552,8 @@ DEBUG - 2025-06-12 12:02:23 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-12 12:02:23 --> ErrorException: Undefined array key "nombre"
 [Method: GET, Route: admin/usuarios]
 in APPPATH\Views\admin\usuarios\listar.php on line 43.
- 1 APPPATH\Views\admin\usuarios\listar.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php', 43)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php')
+ 1 APPPATH\Views\admin\usuarios\listar.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/usuarios/listar', [], true)
  5 APPPATH\Controllers\UsuarioController.php(22): view('admin/usuarios/listar', [...])
@@ -567,8 +567,8 @@ DEBUG - 2025-06-12 12:19:09 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-12 12:19:09 --> ErrorException: Undefined array key "rol"
 [Method: GET, Route: admin/usuarios]
 in APPPATH\Views\admin\usuarios\listar.php on line 45.
- 1 APPPATH\Views\admin\usuarios\listar.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "rol"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php', 45)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php')
+ 1 APPPATH\Views\admin\usuarios\listar.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "rol"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php', 45)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/usuarios/listar', [], true)
  5 APPPATH\Controllers\UsuarioController.php(22): view('admin/usuarios/listar', [...])
@@ -593,22 +593,22 @@ DEBUG - 2025-06-12 12:24:22 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-06-12 12:24:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-12 12:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-12 12:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2025-06-12 12:24:55 --> mysqli_sql_exception: Unknown column 'rol' in 'field list' in C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php:327
+ERROR - 2025-06-12 12:24:55 --> mysqli_sql_exception: Unknown column 'rol' in 'field list' in C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php:327
 Stack trace:
-#0 C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
-#1 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
-#2 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
-#3 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
-#4 C:\xampp\htdocs\Proyecto_vega\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
-#5 C:\xampp\htdocs\Proyecto_vega\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
-#6 C:\xampp\htdocs\Proyecto_vega\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
-#7 C:\xampp\htdocs\Proyecto_vega\app\Controllers\AuthController.php(46): CodeIgniter\Model->insert(Array)
-#8 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
-#9 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
-#10 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#11 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
-#12 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-#13 C:\xampp\htdocs\Proyecto_vega\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#0 C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\TryHardWare\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\TryHardWare\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\TryHardWare\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\TryHardWare\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\TryHardWare\app\Controllers\AuthController.php(46): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#9 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\TryHardWare\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\TryHardWare\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\TryHardWare\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #14 {main}
 CRITICAL - 2025-06-12 12:24:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'rol' in 'field list'
 [Method: POST, Route: registro]
@@ -689,7 +689,7 @@ DEBUG - 2025-06-12 12:30:17 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-12 12:30:17 --> ErrorException: Undefined array key "role"
 [Method: POST, Route: login]
 in APPPATH\Controllers\AuthController.php on line 82.
- 1 APPPATH\Controllers\AuthController.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "role"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\AuthController.php', 82)
+ 1 APPPATH\Controllers\AuthController.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "role"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\AuthController.php', 82)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->doLogin()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)

@@ -180,8 +180,8 @@ DEBUG - 2025-06-14 07:21:18 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-14 07:21:18 --> ErrorException: Undefined array key "id_usuario"
 [Method: GET, Route: admin/usuarios/editar/11]
 in APPPATH\Views\admin\usuarios\editar.php on line 21.
- 1 APPPATH\Views\admin\usuarios\editar.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_usuario"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\editar.php', 21)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\editar.php')
+ 1 APPPATH\Views\admin\usuarios\editar.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_usuario"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\editar.php', 21)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\editar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/usuarios/editar', [], true)
  5 APPPATH\Controllers\UsuarioController.php(40): view('admin/usuarios/editar', [...])
@@ -218,7 +218,7 @@ DEBUG - 2025-06-14 07:55:57 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-14 07:55:57 --> ErrorException: Undefined property: App\Controllers\CategoriaController::$categoriaModel
 [Method: GET, Route: admin/categorias]
 in APPPATH\Controllers\CategoriaController.php on line 35.
- 1 APPPATH\Controllers\CategoriaController.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\CategoriaController::$categoriaModel', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\CategoriaController.php', 35)
+ 1 APPPATH\Controllers\CategoriaController.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\CategoriaController::$categoriaModel', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\CategoriaController.php', 35)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CategoriaController->index()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -949,8 +949,8 @@ DEBUG - 2025-06-14 23:24:12 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-14 23:24:12 --> ErrorException: Undefined variable $categorias
 [Method: GET, Route: admin/productos]
 in APPPATH\Views\admin\productos\catalogo.php on line 42.
- 1 APPPATH\Views\admin\productos\catalogo.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php', 42)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php')
+ 1 APPPATH\Views\admin\productos\catalogo.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php', 42)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/productos/catalogo', [], true)
  5 APPPATH\Controllers\productoController.php(68): view('admin/productos/catalogo', [...])
@@ -966,8 +966,8 @@ DEBUG - 2025-06-14 23:27:11 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-14 23:27:11 --> ErrorException: Undefined variable $categorias
 [Method: GET, Route: admin/productos]
 in APPPATH\Views\admin\productos\catalogo.php on line 42.
- 1 APPPATH\Views\admin\productos\catalogo.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php', 42)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php')
+ 1 APPPATH\Views\admin\productos\catalogo.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php', 42)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/productos/catalogo', [], true)
  5 APPPATH\Controllers\productoController.php(68): view('admin/productos/catalogo', [...])
@@ -1029,8 +1029,8 @@ DEBUG - 2025-06-14 23:31:35 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-14 23:31:35 --> ErrorException: Undefined variable $categorias
 [Method: GET, Route: admin/productos]
 in APPPATH\Views\admin\productos\catalogo.php on line 42.
- 1 APPPATH\Views\admin\productos\catalogo.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php', 42)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php')
+ 1 APPPATH\Views\admin\productos\catalogo.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php', 42)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/productos/catalogo', [], true)
  5 APPPATH\Controllers\productoController.php(68): view('admin/productos/catalogo', [...])
@@ -1044,8 +1044,8 @@ DEBUG - 2025-06-14 23:32:11 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-14 23:32:11 --> ErrorException: Undefined variable $categorias
 [Method: GET, Route: admin/productos]
 in APPPATH\Views\admin\productos\catalogo.php on line 42.
- 1 APPPATH\Views\admin\productos\catalogo.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php', 42)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php')
+ 1 APPPATH\Views\admin\productos\catalogo.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php', 42)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/productos/catalogo', [], true)
  5 APPPATH\Controllers\productoController.php(68): view('admin/productos/catalogo', [...])

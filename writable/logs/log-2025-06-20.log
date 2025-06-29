@@ -424,8 +424,8 @@ DEBUG - 2025-06-20 21:41:32 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-20 21:43:24 --> ErrorException: Undefined array key "color"
 [Method: GET, Route: principal]
 in APPPATH\Views\front\principal.php on line 128.
- 1 APPPATH\Views\front\principal.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "color"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\front\\principal.php', 128)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\front\\principal.php')
+ 1 APPPATH\Views\front\principal.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "color"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\front\\principal.php', 128)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\front\\principal.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('front/principal', [], true)
  5 APPPATH\Controllers\Home.php(9): view('front/principal')

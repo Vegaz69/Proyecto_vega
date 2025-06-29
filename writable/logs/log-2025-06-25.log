@@ -573,7 +573,7 @@ DEBUG - 2025-06-25 18:24:22 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-25 18:24:22 --> ParseError: syntax error, unexpected token "->", expecting "," or ";"
 [Method: GET, Route: admin/productos]
 in APPPATH\Controllers\productoController.php on line 4.
- 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\ProductoController.php')
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\ProductoController.php')
  2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductoController')
  3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductoController')
  4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\ProductoController', true)

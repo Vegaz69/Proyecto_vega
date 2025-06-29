@@ -18,8 +18,8 @@ DEBUG - 2025-06-04 05:35:04 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-04 05:35:04 --> ErrorException: Undefined variable $pager
 [Method: GET, Route: catalogo]
 in APPPATH\Views\productos\catalogo_publico.php on line 30.
- 1 APPPATH\Views\productos\catalogo_publico.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\catalogo_publico.php', 30)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\catalogo_publico.php')
+ 1 APPPATH\Views\productos\catalogo_publico.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\catalogo_publico.php', 30)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\catalogo_publico.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo_publico', [], true)
  5 APPPATH\Controllers\productoController.php(162): view('productos/catalogo_publico', [...])

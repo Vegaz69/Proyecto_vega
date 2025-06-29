@@ -69,8 +69,8 @@ DEBUG - 2025-05-27 22:21:50 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-05-27 22:21:50 --> ErrorException: Undefined variable $pager
 [Method: GET, Route: productos/buscar]
 in APPPATH\Views\productos\listar.php on line 54.
- 1 APPPATH\Views\productos\listar.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\listar.php', 54)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\listar.php')
+ 1 APPPATH\Views\productos\listar.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\listar.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/listar', [], true)
  5 APPPATH\Controllers\productoController.php(138): view('productos/listar', [...])

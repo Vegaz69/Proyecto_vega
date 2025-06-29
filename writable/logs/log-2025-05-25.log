@@ -170,8 +170,8 @@ DEBUG - 2025-05-25 23:37:53 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-05-25 23:37:53 --> ErrorException: Undefined variable $productoModel
 [Method: GET, Route: productos]
 in APPPATH\Views\productos\listar.php on line 40.
- 1 APPPATH\Views\productos\listar.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productoModel', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\listar.php', 40)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\listar.php')
+ 1 APPPATH\Views\productos\listar.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productoModel', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\listar.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/listar', [], true)
  5 APPPATH\Controllers\productoController.php(15): view('productos/listar', [...])
@@ -185,8 +185,8 @@ DEBUG - 2025-05-25 23:39:11 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-05-25 23:39:11 --> ErrorException: Undefined variable $productoModel
 [Method: GET, Route: productos]
 in APPPATH\Views\productos\listar.php on line 40.
- 1 APPPATH\Views\productos\listar.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productoModel', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\listar.php', 40)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\listar.php')
+ 1 APPPATH\Views\productos\listar.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productoModel', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\listar.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/listar', [], true)
  5 APPPATH\Controllers\productoController.php(15): view('productos/listar', [...])

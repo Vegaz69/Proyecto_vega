@@ -167,22 +167,22 @@ DEBUG - 2025-06-08 23:46:45 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-06-08 23:46:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-08 23:47:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-08 23:47:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2025-06-08 23:47:15 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php:327
+ERROR - 2025-06-08 23:47:15 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php:327
 Stack trace:
-#0 C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `usuario...', 0)
-#1 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `usuario...')
-#2 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `usuario...')
-#3 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `usuario...', Array, false)
-#4 C:\xampp\htdocs\Proyecto_vega\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
-#5 C:\xampp\htdocs\Proyecto_vega\system\BaseModel.php(1027): CodeIgniter\Model->doUpdate(Array, Array)
-#6 C:\xampp\htdocs\Proyecto_vega\system\Model.php(863): CodeIgniter\BaseModel->update(Array, Array)
-#7 C:\xampp\htdocs\Proyecto_vega\app\Controllers\UsuarioController.php(92): CodeIgniter\Model->update('9', Array)
-#8 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(933): App\Controllers\UsuarioController->desactivar('9')
-#9 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
-#10 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#11 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
-#12 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-#13 C:\xampp\htdocs\Proyecto_vega\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#0 C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `usuario...', 0)
+#1 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `usuario...')
+#2 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `usuario...')
+#3 C:\xampp\htdocs\TryHardWare\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `usuario...', Array, false)
+#4 C:\xampp\htdocs\TryHardWare\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\TryHardWare\system\BaseModel.php(1027): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\TryHardWare\system\Model.php(863): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\TryHardWare\app\Controllers\UsuarioController.php(92): CodeIgniter\Model->update('9', Array)
+#8 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(933): App\Controllers\UsuarioController->desactivar('9')
+#9 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\TryHardWare\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\TryHardWare\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\TryHardWare\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #14 {main}
 CRITICAL - 2025-06-08 23:47:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
 [Method: GET, Route: admin/usuarios/desactivar/9]

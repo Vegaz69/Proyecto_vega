@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /Proyecto_vega/
+RewriteBase /TryHardWare/
 Options -Indexes 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

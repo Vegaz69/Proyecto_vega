@@ -92,8 +92,8 @@ DEBUG - 2025-06-15 01:19:23 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-15 01:19:23 --> ErrorException: Undefined variable $orden_apellido
 [Method: GET, Route: admin/usuarios]
 in APPPATH\Views\admin\usuarios\listar.php on line 44.
- 1 APPPATH\Views\admin\usuarios\listar.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $orden_apellido', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php', 44)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php')
+ 1 APPPATH\Views\admin\usuarios\listar.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $orden_apellido', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/usuarios/listar', [], true)
  5 APPPATH\Controllers\UsuarioController.php(54): view('admin/usuarios/listar', [...])
@@ -201,8 +201,8 @@ DEBUG - 2025-06-15 02:02:45 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-15 02:02:45 --> ErrorException: Undefined variable $orden_apellido
 [Method: GET, Route: admin/categorias]
 in APPPATH\Views\admin\categorias\listar.php on line 36.
- 1 APPPATH\Views\admin\categorias\listar.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $orden_apellido', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\categorias\\listar.php', 36)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\categorias\\listar.php')
+ 1 APPPATH\Views\admin\categorias\listar.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $orden_apellido', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\categorias\\listar.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\categorias\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/categorias/listar', [], true)
  5 APPPATH\Controllers\CategoriaController.php(60): view('admin/categorias/listar', [...])
@@ -218,8 +218,8 @@ DEBUG - 2025-06-15 02:04:00 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-15 02:04:00 --> ErrorException: Undefined variable $orden_apellido
 [Method: GET, Route: admin/categorias]
 in APPPATH\Views\admin\categorias\listar.php on line 36.
- 1 APPPATH\Views\admin\categorias\listar.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $orden_apellido', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\categorias\\listar.php', 36)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\categorias\\listar.php')
+ 1 APPPATH\Views\admin\categorias\listar.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $orden_apellido', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\categorias\\listar.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\categorias\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/categorias/listar', [], true)
  5 APPPATH\Controllers\CategoriaController.php(60): view('admin/categorias/listar', [...])
@@ -305,8 +305,8 @@ DEBUG - 2025-06-15 02:33:51 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-15 02:33:51 --> ErrorException: Undefined variable $orden_nombre
 [Method: GET, Route: admin/productos]
 in APPPATH\Views\admin\productos\catalogo.php on line 76.
- 1 APPPATH\Views\admin\productos\catalogo.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $orden_nombre', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php', 76)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php')
+ 1 APPPATH\Views\admin\productos\catalogo.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $orden_nombre', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php', 76)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/productos/catalogo', [], true)
  5 APPPATH\Controllers\productoController.php(80): view('admin/productos/catalogo', [...])
@@ -531,8 +531,8 @@ DEBUG - 2025-06-15 07:25:31 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-15 07:25:31 --> ErrorException: Undefined variable $claseStock
 [Method: GET, Route: admin/productos]
 in APPPATH\Views\admin\productos\catalogo.php on line 84.
- 1 APPPATH\Views\admin\productos\catalogo.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $claseStock', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php', 84)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\productos\\catalogo.php')
+ 1 APPPATH\Views\admin\productos\catalogo.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $claseStock', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\productos\\catalogo.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/productos/catalogo', [], true)
  5 APPPATH\Controllers\productoController.php(80): view('admin/productos/catalogo', [...])
@@ -700,7 +700,7 @@ DEBUG - 2025-06-15 10:43:02 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-15 10:43:02 --> ErrorException: Undefined variable $usuarios
 [Method: GET, Route: admin/usuarios]
 in APPPATH\Controllers\UsuarioController.php on line 55.
- 1 APPPATH\Controllers\UsuarioController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuarios', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\UsuarioController.php', 55)
+ 1 APPPATH\Controllers\UsuarioController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuarios', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\UsuarioController.php', 55)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->listar()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)

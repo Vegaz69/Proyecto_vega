@@ -93,8 +93,8 @@ DEBUG - 2025-06-23 00:43:38 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-23 00:43:38 --> ErrorException: Undefined array key "tipo"
 [Method: GET, Route: admin/mensajes]
 in APPPATH\Views\admin\mensajes\listado_mensajes.php on line 74.
- 1 APPPATH\Views\admin\mensajes\listado_mensajes.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tipo"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\mensajes\\listado_mensajes.php', 74)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\mensajes\\listado_mensajes.php')
+ 1 APPPATH\Views\admin\mensajes\listado_mensajes.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tipo"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\mensajes\\listado_mensajes.php', 74)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\mensajes\\listado_mensajes.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/mensajes/listado_mensajes', [], true)
  5 APPPATH\Controllers\AdminMensajesController.php(49): view('admin/mensajes/listado_mensajes', [...])
@@ -108,8 +108,8 @@ DEBUG - 2025-06-23 00:46:25 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-23 00:46:25 --> ErrorException: Undefined array key "estado"
 [Method: GET, Route: admin/mensajes]
 in APPPATH\Views\admin\mensajes\listado_mensajes.php on line 81.
- 1 APPPATH\Views\admin\mensajes\listado_mensajes.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\mensajes\\listado_mensajes.php', 81)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\mensajes\\listado_mensajes.php')
+ 1 APPPATH\Views\admin\mensajes\listado_mensajes.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\mensajes\\listado_mensajes.php', 81)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\mensajes\\listado_mensajes.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/mensajes/listado_mensajes', [], true)
  5 APPPATH\Controllers\AdminMensajesController.php(49): view('admin/mensajes/listado_mensajes', [...])
@@ -123,8 +123,8 @@ DEBUG - 2025-06-23 00:48:52 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-23 00:48:52 --> ErrorException: Undefined array key "remitente"
 [Method: GET, Route: admin/mensajes]
 in APPPATH\Views\admin\mensajes\listado_mensajes.php on line 88.
- 1 APPPATH\Views\admin\mensajes\listado_mensajes.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "remitente"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\mensajes\\listado_mensajes.php', 88)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\mensajes\\listado_mensajes.php')
+ 1 APPPATH\Views\admin\mensajes\listado_mensajes.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "remitente"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\mensajes\\listado_mensajes.php', 88)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\mensajes\\listado_mensajes.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/mensajes/listado_mensajes', [], true)
  5 APPPATH\Controllers\AdminMensajesController.php(49): view('admin/mensajes/listado_mensajes', [...])
@@ -138,8 +138,8 @@ DEBUG - 2025-06-23 00:50:00 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-23 00:50:00 --> ErrorException: Undefined array key "email_remitente"
 [Method: GET, Route: admin/mensajes]
 in APPPATH\Views\admin\mensajes\listado_mensajes.php on line 89.
- 1 APPPATH\Views\admin\mensajes\listado_mensajes.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "email_remitente"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\mensajes\\listado_mensajes.php', 89)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\mensajes\\listado_mensajes.php')
+ 1 APPPATH\Views\admin\mensajes\listado_mensajes.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "email_remitente"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\mensajes\\listado_mensajes.php', 89)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\mensajes\\listado_mensajes.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/mensajes/listado_mensajes', [], true)
  5 APPPATH\Controllers\AdminMensajesController.php(49): view('admin/mensajes/listado_mensajes', [...])
@@ -1409,8 +1409,8 @@ DEBUG - 2025-06-23 23:26:29 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-23 23:26:29 --> ErrorException: Undefined array key "perfil_id"
 [Method: GET, Route: admin/usuarios]
 in APPPATH\Views\admin\usuarios\listar.php on line 60.
- 1 APPPATH\Views\admin\usuarios\listar.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "perfil_id"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php', 60)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php')
+ 1 APPPATH\Views\admin\usuarios\listar.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "perfil_id"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php', 60)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/usuarios/listar', [], true)
  5 APPPATH\Controllers\UsuarioController.php(56): view('admin/usuarios/listar', [...])
@@ -1447,8 +1447,8 @@ DEBUG - 2025-06-23 23:31:36 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-23 23:31:36 --> ErrorException: Undefined array key "perfil_id"
 [Method: GET, Route: admin/usuarios]
 in APPPATH\Views\admin\usuarios\listar.php on line 60.
- 1 APPPATH\Views\admin\usuarios\listar.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "perfil_id"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php', 60)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\usuarios\\listar.php')
+ 1 APPPATH\Views\admin\usuarios\listar.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "perfil_id"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php', 60)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\usuarios\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/usuarios/listar', [], true)
  5 APPPATH\Controllers\UsuarioController.php(56): view('admin/usuarios/listar', [...])

@@ -476,8 +476,8 @@ DEBUG - 2025-06-07 13:11:38 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-07 13:11:38 --> ErrorException: Undefined array key "id_producto"
 [Method: GET, Route: catalogo]
 in APPPATH\Views\productos\catalogo_publico.php on line 20.
- 1 APPPATH\Views\productos\catalogo_publico.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_producto"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\catalogo_publico.php', 20)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\catalogo_publico.php')
+ 1 APPPATH\Views\productos\catalogo_publico.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_producto"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\catalogo_publico.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\catalogo_publico.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo_publico', [], true)
  5 APPPATH\Controllers\CatalogoController.php(25): view('productos/catalogo_publico', [...])
@@ -491,8 +491,8 @@ DEBUG - 2025-06-07 20:28:59 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-07 20:28:59 --> ErrorException: Undefined array key "id_producto"
 [Method: GET, Route: catalogo]
 in APPPATH\Views\productos\catalogo_publico.php on line 20.
- 1 APPPATH\Views\productos\catalogo_publico.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_producto"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\catalogo_publico.php', 20)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\catalogo_publico.php')
+ 1 APPPATH\Views\productos\catalogo_publico.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_producto"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\catalogo_publico.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\catalogo_publico.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo_publico', [], true)
  5 APPPATH\Controllers\CatalogoController.php(25): view('productos/catalogo_publico', [...])
@@ -516,21 +516,21 @@ DEBUG - 2025-06-07 20:30:45 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-06-07 20:31:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-07 20:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-07 20:31:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2025-06-07 20:57:10 --> mysqli_sql_exception: Column 'activo' in where clause is ambiguous in C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php:327
+ERROR - 2025-06-07 20:57:10 --> mysqli_sql_exception: Column 'activo' in where clause is ambiguous in C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php:327
 Stack trace:
-#0 C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
-#1 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
-#2 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
-#3 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
-#4 C:\xampp\htdocs\Proyecto_vega\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
-#5 C:\xampp\htdocs\Proyecto_vega\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
-#6 C:\xampp\htdocs\Proyecto_vega\app\Controllers\CatalogoController.php(30): CodeIgniter\BaseModel->paginate(10)
-#7 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(933): App\Controllers\CatalogoController->index()
-#8 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CatalogoController))
-#9 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#10 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
-#11 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-#12 C:\xampp\htdocs\Proyecto_vega\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#0 C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\TryHardWare\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\TryHardWare\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\TryHardWare\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\TryHardWare\app\Controllers\CatalogoController.php(30): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(933): App\Controllers\CatalogoController->index()
+#8 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CatalogoController))
+#9 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\TryHardWare\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\TryHardWare\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\TryHardWare\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #13 {main}
 CRITICAL - 2025-06-07 20:57:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'activo' in where clause is ambiguous
 [Method: GET, Route: catalogo]
@@ -607,8 +607,8 @@ DEBUG - 2025-06-07 21:06:45 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-07 21:06:45 --> ErrorException: Undefined array key "id"
 [Method: GET, Route: admin/productos]
 in APPPATH\Views\productos\catalogo.php on line 52.
- 1 APPPATH\Views\productos\catalogo.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\catalogo.php', 52)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\catalogo.php')
+ 1 APPPATH\Views\productos\catalogo.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\catalogo.php', 52)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\catalogo.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo', [], true)
  5 APPPATH\Controllers\productoController.php(27): view('productos/catalogo', [...])
@@ -622,8 +622,8 @@ DEBUG - 2025-06-07 21:06:51 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-07 21:06:51 --> ErrorException: Undefined array key "id"
 [Method: GET, Route: admin/productos]
 in APPPATH\Views\productos\catalogo.php on line 52.
- 1 APPPATH\Views\productos\catalogo.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\catalogo.php', 52)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\catalogo.php')
+ 1 APPPATH\Views\productos\catalogo.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\catalogo.php', 52)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\catalogo.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo', [], true)
  5 APPPATH\Controllers\productoController.php(27): view('productos/catalogo', [...])
@@ -704,7 +704,7 @@ DEBUG - 2025-06-07 22:36:04 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-07 22:36:04 --> ErrorException: Undefined variable $id
 [Method: GET, Route: admin/productos/editar/17]
 in APPPATH\Controllers\productoController.php on line 174.
- 1 APPPATH\Controllers\productoController.php(174): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\productoController.php', 174)
+ 1 APPPATH\Controllers\productoController.php(174): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\productoController.php', 174)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductoController->editar('17')
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -740,7 +740,7 @@ DEBUG - 2025-06-07 22:42:33 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-07 22:42:33 --> ErrorException: Undefined variable $id
 [Method: GET, Route: admin/productos/editar/20]
 in APPPATH\Controllers\productoController.php on line 174.
- 1 APPPATH\Controllers\productoController.php(174): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\productoController.php', 174)
+ 1 APPPATH\Controllers\productoController.php(174): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\productoController.php', 174)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductoController->editar('20')
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -751,7 +751,7 @@ DEBUG - 2025-06-07 22:42:57 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-07 22:42:57 --> ErrorException: Undefined variable $id
 [Method: GET, Route: admin/productos/editar/20]
 in APPPATH\Controllers\productoController.php on line 174.
- 1 APPPATH\Controllers\productoController.php(174): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\productoController.php', 174)
+ 1 APPPATH\Controllers\productoController.php(174): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\productoController.php', 174)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductoController->editar('20')
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -763,8 +763,8 @@ DEBUG - 2025-06-07 22:44:29 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-07 22:44:29 --> ErrorException: Undefined array key "id"
 [Method: GET, Route: admin/productos/editar/17]
 in APPPATH\Views\productos\editar.php on line 25.
- 1 APPPATH\Views\productos\editar.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\editar.php', 25)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\editar.php')
+ 1 APPPATH\Views\productos\editar.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\editar.php', 25)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\editar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/editar', [], true)
  5 APPPATH\Controllers\productoController.php(178): view('productos/editar', [...])
@@ -778,8 +778,8 @@ DEBUG - 2025-06-07 22:44:33 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-07 22:44:33 --> ErrorException: Undefined array key "id"
 [Method: GET, Route: admin/productos/editar/20]
 in APPPATH\Views\productos\editar.php on line 25.
- 1 APPPATH\Views\productos\editar.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\editar.php', 25)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\productos\\editar.php')
+ 1 APPPATH\Views\productos\editar.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\editar.php', 25)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\productos\\editar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/editar', [], true)
  5 APPPATH\Controllers\productoController.php(178): view('productos/editar', [...])

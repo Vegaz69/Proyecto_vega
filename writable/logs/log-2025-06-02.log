@@ -12,7 +12,7 @@ DEBUG - 2025-06-02 02:48:38 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-02 02:48:46 --> ErrorException: Undefined array key "contraseña"
 [Method: POST, Route: usuarios/guardar]
 in APPPATH\Controllers\AuthController.php on line 20.
- 1 APPPATH\Controllers\AuthController.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "contraseña"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\AuthController.php', 20)
+ 1 APPPATH\Controllers\AuthController.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "contraseña"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\AuthController.php', 20)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->guardar()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -34,22 +34,22 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 DEBUG - 2025-06-02 03:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2025-06-02 03:10:34 --> mysqli_sql_exception: Duplicate entry 'vega@live.com' for key 'email' in C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php:327
+ERROR - 2025-06-02 03:10:34 --> mysqli_sql_exception: Duplicate entry 'vega@live.com' for key 'email' in C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php:327
 Stack trace:
-#0 C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
-#1 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
-#2 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
-#3 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
-#4 C:\xampp\htdocs\Proyecto_vega\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
-#5 C:\xampp\htdocs\Proyecto_vega\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
-#6 C:\xampp\htdocs\Proyecto_vega\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
-#7 C:\xampp\htdocs\Proyecto_vega\app\Controllers\AuthController.php(23): CodeIgniter\Model->insert(Array)
-#8 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(933): App\Controllers\AuthController->guardar()
-#9 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
-#10 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#11 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
-#12 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-#13 C:\xampp\htdocs\Proyecto_vega\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#0 C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\TryHardWare\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\TryHardWare\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\TryHardWare\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\TryHardWare\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\TryHardWare\app\Controllers\AuthController.php(23): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(933): App\Controllers\AuthController->guardar()
+#9 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\TryHardWare\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\TryHardWare\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\TryHardWare\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #14 {main}
 CRITICAL - 2025-06-02 03:10:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'vega@live.com' for key 'email'
 [Method: POST, Route: usuarios/guardar]

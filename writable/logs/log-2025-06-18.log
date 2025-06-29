@@ -83,8 +83,8 @@ DEBUG - 2025-06-18 07:33:53 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-18 07:33:53 --> ErrorException: Undefined variable $usuarios
 [Method: GET, Route: admin/categorias]
 in APPPATH\Views\admin\categorias\listar.php on line 104.
- 1 APPPATH\Views\admin\categorias\listar.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuarios', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\categorias\\listar.php', 104)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\categorias\\listar.php')
+ 1 APPPATH\Views\admin\categorias\listar.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuarios', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\categorias\\listar.php', 104)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\categorias\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/categorias/listar', [], true)
  5 APPPATH\Controllers\CategoriaController.php(60): view('admin/categorias/listar', [...])
@@ -110,8 +110,8 @@ DEBUG - 2025-06-18 07:36:10 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-18 07:36:10 --> ErrorException: Undefined property: CodeIgniter\View\View::$this
 [Method: GET, Route: admin/categorias]
 in APPPATH\Views\admin\categorias\listar.php on line 2.
- 1 APPPATH\Views\admin\categorias\listar.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$this', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\categorias\\listar.php', 2)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\categorias\\listar.php')
+ 1 APPPATH\Views\admin\categorias\listar.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$this', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\categorias\\listar.php', 2)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\categorias\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/categorias/listar', [], true)
  5 APPPATH\Controllers\CategoriaController.php(60): view('admin/categorias/listar', [...])
@@ -127,8 +127,8 @@ DEBUG - 2025-06-18 07:36:34 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-18 07:36:34 --> ErrorException: Undefined property: CodeIgniter\View\View::$this
 [Method: GET, Route: admin/categorias]
 in APPPATH\Views\admin\categorias\listar.php on line 2.
- 1 APPPATH\Views\admin\categorias\listar.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$this', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\categorias\\listar.php', 2)
- 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Views\\admin\\categorias\\listar.php')
+ 1 APPPATH\Views\admin\categorias\listar.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$this', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\categorias\\listar.php', 2)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\TryHardWare\\app\\Views\\admin\\categorias\\listar.php')
  3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/categorias/listar', [], true)
  5 APPPATH\Controllers\CategoriaController.php(60): view('admin/categorias/listar', [...])
@@ -286,7 +286,7 @@ DEBUG - 2025-06-18 10:24:59 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-18 10:24:59 --> ErrorException: Trying to access array offset on value of type null
 [Method: POST, Route: registro]
 in APPPATH\Controllers\AuthController.php on line 57.
- 1 APPPATH\Controllers\AuthController.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\AuthController.php', 57)
+ 1 APPPATH\Controllers\AuthController.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\AuthController.php', 57)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -301,7 +301,7 @@ DEBUG - 2025-06-18 10:25:28 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-18 10:25:28 --> ErrorException: Trying to access array offset on value of type null
 [Method: POST, Route: registro]
 in APPPATH\Controllers\AuthController.php on line 57.
- 1 APPPATH\Controllers\AuthController.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\AuthController.php', 57)
+ 1 APPPATH\Controllers\AuthController.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\AuthController.php', 57)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -334,7 +334,7 @@ DEBUG - 2025-06-18 10:28:40 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-18 10:28:40 --> ErrorException: Trying to access array offset on value of type null
 [Method: POST, Route: registro]
 in APPPATH\Controllers\AuthController.php on line 57.
- 1 APPPATH\Controllers\AuthController.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\AuthController.php', 57)
+ 1 APPPATH\Controllers\AuthController.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\AuthController.php', 57)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)

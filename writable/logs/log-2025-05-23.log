@@ -36,7 +36,7 @@ DEBUG - 2025-05-23 18:51:08 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-05-23 19:01:19 --> ParseError: syntax error, unexpected variable "$productoModel", expecting "function" or "const"
 [Method: GET, Route: productos]
 in APPPATH\Controllers\productoController.php on line 40.
- 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\ProductoController.php')
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\ProductoController.php')
  2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductoController')
  3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductoController')
  4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\ProductoController', true)
@@ -48,7 +48,7 @@ in APPPATH\Controllers\productoController.php on line 40.
 CRITICAL - 2025-05-23 19:01:28 --> ParseError: syntax error, unexpected variable "$productoModel", expecting "function" or "const"
 [Method: GET, Route: productos]
 in APPPATH\Controllers\productoController.php on line 40.
- 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\ProductoController.php')
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\ProductoController.php')
  2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductoController')
  3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductoController')
  4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\ProductoController', true)
@@ -61,7 +61,7 @@ DEBUG - 2025-05-23 19:01:54 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-05-23 19:02:52 --> ParseError: syntax error, unexpected variable "$productoModel", expecting "function" or "const"
 [Method: GET, Route: productos]
 in APPPATH\Controllers\productoController.php on line 40.
- 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\ProductoController.php')
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\ProductoController.php')
  2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductoController')
  3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductoController')
  4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\ProductoController', true)

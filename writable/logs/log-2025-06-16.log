@@ -163,7 +163,7 @@ DEBUG - 2025-06-16 09:01:03 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-16 09:01:03 --> ErrorException: Undefined property: App\Controllers\PedidoController::$detalleVentaModel
 [Method: GET, Route: mis-pedidos]
 in APPPATH\Controllers\PedidoController.php on line 51.
- 1 APPPATH\Controllers\PedidoController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PedidoController::$detalleVentaModel', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\PedidoController.php', 51)
+ 1 APPPATH\Controllers\PedidoController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PedidoController::$detalleVentaModel', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\PedidoController.php', 51)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->misPedidos()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -174,7 +174,7 @@ DEBUG - 2025-06-16 09:01:10 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-16 09:01:11 --> ErrorException: Undefined property: App\Controllers\PedidoController::$detalleVentaModel
 [Method: GET, Route: mis-pedidos]
 in APPPATH\Controllers\PedidoController.php on line 51.
- 1 APPPATH\Controllers\PedidoController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PedidoController::$detalleVentaModel', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\PedidoController.php', 51)
+ 1 APPPATH\Controllers\PedidoController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PedidoController::$detalleVentaModel', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\PedidoController.php', 51)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->misPedidos()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -185,7 +185,7 @@ DEBUG - 2025-06-16 09:04:21 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-16 09:04:21 --> ErrorException: Undefined property: App\Controllers\PedidoController::$detalleVentaModel
 [Method: GET, Route: mis_pedidos]
 in APPPATH\Controllers\PedidoController.php on line 51.
- 1 APPPATH\Controllers\PedidoController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PedidoController::$detalleVentaModel', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\PedidoController.php', 51)
+ 1 APPPATH\Controllers\PedidoController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PedidoController::$detalleVentaModel', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\PedidoController.php', 51)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->misPedidos()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -196,7 +196,7 @@ DEBUG - 2025-06-16 09:14:11 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-16 09:14:11 --> ErrorException: Undefined property: App\Controllers\PedidoController::$detalleVentaModel
 [Method: GET, Route: mis-pedidos]
 in APPPATH\Controllers\PedidoController.php on line 51.
- 1 APPPATH\Controllers\PedidoController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PedidoController::$detalleVentaModel', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\PedidoController.php', 51)
+ 1 APPPATH\Controllers\PedidoController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PedidoController::$detalleVentaModel', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\PedidoController.php', 51)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->misPedidos()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -207,7 +207,7 @@ DEBUG - 2025-06-16 09:15:51 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-06-16 09:15:51 --> ErrorException: Undefined property: App\Controllers\PedidoController::$detalleVentaModel
 [Method: GET, Route: mis-pedidos]
 in APPPATH\Controllers\PedidoController.php on line 51.
- 1 APPPATH\Controllers\PedidoController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PedidoController::$detalleVentaModel', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\PedidoController.php', 51)
+ 1 APPPATH\Controllers\PedidoController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PedidoController::$detalleVentaModel', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\PedidoController.php', 51)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->misPedidos()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
@@ -247,21 +247,21 @@ DEBUG - 2025-06-16 17:41:39 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-06-16 17:41:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-16 17:41:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-16 17:41:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2025-06-16 17:41:43 --> mysqli_sql_exception: Table 'tienda_hardware.users' doesn't exist in C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php:327
+ERROR - 2025-06-16 17:41:43 --> mysqli_sql_exception: Table 'tienda_hardware.users' doesn't exist in C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php:327
 Stack trace:
-#0 C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ventas`...', 0)
-#1 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas`...')
-#2 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas`...')
-#3 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`...', Array, false)
-#4 C:\xampp\htdocs\Proyecto_vega\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
-#5 C:\xampp\htdocs\Proyecto_vega\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
-#6 C:\xampp\htdocs\Proyecto_vega\app\Controllers\VentasController.php(32): CodeIgniter\BaseModel->findAll()
-#7 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(933): App\Controllers\VentasController->listar()
-#8 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentasController))
-#9 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#10 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
-#11 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-#12 C:\xampp\htdocs\Proyecto_vega\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#0 C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ventas`...', 0)
+#1 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas`...')
+#2 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas`...')
+#3 C:\xampp\htdocs\TryHardWare\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`...', Array, false)
+#4 C:\xampp\htdocs\TryHardWare\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\TryHardWare\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\TryHardWare\app\Controllers\VentasController.php(32): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(933): App\Controllers\VentasController->listar()
+#8 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentasController))
+#9 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\TryHardWare\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\TryHardWare\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\TryHardWare\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #13 {main}
 CRITICAL - 2025-06-16 17:41:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'tienda_hardware.users' doesn't exist
 [Method: GET, Route: admin/ventas]
@@ -330,21 +330,21 @@ ORDER BY `ventas`.`fecha_venta` DESC', [], false)
 12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 DEBUG - 2025-06-16 17:44:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2025-06-16 17:44:40 --> mysqli_sql_exception: Unknown column 'users.nombre' in 'field list' in C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php:327
+ERROR - 2025-06-16 17:44:40 --> mysqli_sql_exception: Unknown column 'users.nombre' in 'field list' in C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php:327
 Stack trace:
-#0 C:\xampp\htdocs\Proyecto_vega\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ventas`...', 0)
-#1 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas`...')
-#2 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas`...')
-#3 C:\xampp\htdocs\Proyecto_vega\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`...', Array, false)
-#4 C:\xampp\htdocs\Proyecto_vega\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
-#5 C:\xampp\htdocs\Proyecto_vega\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
-#6 C:\xampp\htdocs\Proyecto_vega\app\Controllers\VentasController.php(32): CodeIgniter\BaseModel->findAll()
-#7 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(933): App\Controllers\VentasController->listar()
-#8 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentasController))
-#9 C:\xampp\htdocs\Proyecto_vega\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#10 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
-#11 C:\xampp\htdocs\Proyecto_vega\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-#12 C:\xampp\htdocs\Proyecto_vega\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#0 C:\xampp\htdocs\TryHardWare\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ventas`...', 0)
+#1 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas`...')
+#2 C:\xampp\htdocs\TryHardWare\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas`...')
+#3 C:\xampp\htdocs\TryHardWare\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`...', Array, false)
+#4 C:\xampp\htdocs\TryHardWare\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\TryHardWare\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\TryHardWare\app\Controllers\VentasController.php(32): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(933): App\Controllers\VentasController->listar()
+#8 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentasController))
+#9 C:\xampp\htdocs\TryHardWare\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\TryHardWare\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\TryHardWare\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\TryHardWare\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #13 {main}
 CRITICAL - 2025-06-16 17:44:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.nombre' in 'field list'
 [Method: GET, Route: admin/ventas]

@@ -34,7 +34,7 @@ DEBUG - 2025-05-30 06:44:08 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-05-30 06:44:23 --> ParseError: syntax error, unexpected token "public"
 [Method: POST, Route: usuarios/guardar]
 in APPPATH\Controllers\usuarioController.php on line 72.
- 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\UsuarioController.php')
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\UsuarioController.php')
  2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UsuarioController')
  3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UsuarioController')
  4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\UsuarioController', true)
@@ -50,7 +50,7 @@ DEBUG - 2025-05-30 06:47:22 --> Session: Class initialized using 'CodeIgniter\Se
 CRITICAL - 2025-05-30 06:47:22 --> ErrorException: Undefined array key "id"
 [Method: POST, Route: usuarios/login]
 in APPPATH\Controllers\usuarioController.php on line 20.
- 1 APPPATH\Controllers\usuarioController.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\Proyecto_vega\\app\\Controllers\\usuarioController.php', 20)
+ 1 APPPATH\Controllers\usuarioController.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\TryHardWare\\app\\Controllers\\usuarioController.php', 20)
  2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->login()
  3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
  4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
