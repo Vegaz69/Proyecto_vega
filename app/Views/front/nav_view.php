@@ -17,14 +17,15 @@ $cartItemCount = getCartItemCount();
         </a>
 
         <div class="d-none d-lg-flex align-items-center flex-grow-1 justify-content-end position-relative">
-            <form class="d-flex me-3" role="search" style="max-width: 600px; width: 100%;" action="<?= base_url('catalogo') ?>" method="get">
-                <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar" name="search_query" id="searchInput" value="<?= esc($search_query_navbar ?? '') ?>">
+            <form class="d-flex me-3" role="search" style="max-width: 600px; width: 100%;"
+                action="<?= base_url('catalogo') ?>" method="get">
+                <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar"
+                    name="search_query" id="searchInput" value="<?= esc($search_query_navbar ?? '') ?>">
                 <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
-            </form>    
-            
+            </form>
+
             <!-- Contenedor para las sugerencias de autocompletado -->
-            <div id="suggestionsContainer" class="list-group position-absolute bg-white rounded shadow" 
-                 style="width: calc(100% - 2.5rem); max-width: calc(600px - 2.5rem); z-index: 1000; top: 100%; 
+            <div id="suggestionsContainer" class="list-group position-absolute bg-white rounded shadow" style="width: calc(100% - 2.5rem); max-width: calc(600px - 2.5rem); z-index: 1000; top: 100%; 
                         display: none; /* Asegura que esté oculto por defecto */
                         border: none; /* Elimina el borde inicial */
                         padding: 0; /* Elimina el padding inicial */
@@ -35,35 +36,41 @@ $cartItemCount = getCartItemCount();
 
             <a class="nav-link text-white position-relative me-3" href="<?= base_url('carrito/ver'); ?>">
                 <i class="fas fa-shopping-cart fa-lg"></i>
-                <span id="cart-count-desktop" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                <span id="cart-count-desktop"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                     <?= $cartItemCount ?> <span class="visually-hidden">items</span>
                 </span>
             </a>
 
             <?php if (session()->get('isLoggedIn')): ?>
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#" id="navbarUserDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user-circle fa-lg me-2"></i>
-                        <span><?= esc(session()->get('nombre') ?? session()->get('email')) ?></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUserDropdown">
-                        <?php if (session()->get('rol') === 'admin'): ?>
-                            <li><a class="dropdown-item" href="<?= base_url('admin/dashboard'); ?>">Panel de Admin</a></li>
-                        <?php else: ?>
-                            <li><a class="dropdown-item" href="<?= base_url('mi-cuenta'); ?>">Mi cuenta</a></li>
-                            <li><a class="dropdown-item" href="<?= base_url('mis-pedidos'); ?>">Mis Pedidos</a></li>
-                        <?php endif; ?>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item text-danger" href="<?= base_url('logout'); ?>">Cerrar Sesión</a></li>
-                    </ul>
-                </div>
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#"
+                    id="navbarUserDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user-circle fa-lg me-2"></i>
+                    <span>
+                        <?= esc(session()->get('nombre') ?? session()->get('email')) ?>
+                    </span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUserDropdown">
+                    <?php if (session()->get('rol') === 'admin'): ?>
+                    <li><a class="dropdown-item" href="<?= base_url('admin/dashboard'); ?>">Panel de Admin</a></li>
+                    <?php else: ?>
+                    <li><a class="dropdown-item" href="<?= base_url('mi-cuenta'); ?>">Mi cuenta</a></li>
+                    <li><a class="dropdown-item" href="<?= base_url('mis-pedidos'); ?>">Mis Pedidos</a></li>
+                    <?php endif; ?>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item text-danger" href="<?= base_url('logout'); ?>">Cerrar Sesión</a></li>
+                </ul>
+            </div>
             <?php else: ?>
-                <a class="btn btn-outline-light rounded-pill px-3 me-2" href="<?= base_url('login'); ?>">
-                    <i class="fas fa-sign-in-alt me-2"></i> Iniciar Sesión
-                </a>
-                <a class="btn btn-warning rounded-pill px-3" href="<?= base_url('registro'); ?>">
-                    <i class="fas fa-user-plus me-2"></i> Registrarse
-                </a>
+            <a class="btn btn-outline-light rounded-pill px-3 me-2" href="<?= base_url('login'); ?>">
+                <i class="fas fa-sign-in-alt me-2"></i> Iniciar Sesión
+            </a>
+            <a class="btn btn-warning rounded-pill px-3" href="<?= base_url('registro'); ?>">
+                <i class="fas fa-user-plus me-2"></i> Registrarse
+            </a>
             <?php endif; ?>
         </div>
     </div>
@@ -78,13 +85,15 @@ $cartItemCount = getCartItemCount();
                 </a>
             </li>
             <li class="nav-item mx-2">
-                <a class="nav-link text-dark d-flex flex-column align-items-center" href="<?= base_url('quienesSomos'); ?>">
+                <a class="nav-link text-dark d-flex flex-column align-items-center"
+                    href="<?= base_url('quienesSomos'); ?>">
                     <i class="fas fa-users"></i>
                     <span class="d-none d-sm-inline">Quiénes somos</span>
                 </a>
             </li>
             <li class="nav-item mx-2">
-                <a class="nav-link text-dark d-flex flex-column align-items-center" href="<?= base_url('comercializacion'); ?>">
+                <a class="nav-link text-dark d-flex flex-column align-items-center"
+                    href="<?= base_url('comercializacion'); ?>">
                     <i class="fas fa-handshake"></i>
                     <span class="d-none d-sm-inline">Comercialización</span>
                 </a> <!-- CIERRE DE ETIQUETA <a> FALTANTE - CORREGIDO AQUÍ -->
@@ -96,7 +105,8 @@ $cartItemCount = getCartItemCount();
                 </a>
             </li>
             <li class="nav-item mx-2">
-                <a class="nav-link text-dark d-flex flex-column align-items-center" href="<?= base_url('terminosyUsos'); ?>">
+                <a class="nav-link text-dark d-flex flex-column align-items-center"
+                    href="<?= base_url('terminosyUsos'); ?>">
                     <i class="fas fa-file-alt"></i>
                     <span class="d-none d-sm-inline">Términos y Usos</span>
                 </a>
@@ -112,7 +122,8 @@ $cartItemCount = getCartItemCount();
         </a>
         <a class="nav-link text-white text-center position-relative" href="<?= base_url('carrito/ver'); ?>">
             <i class="fas fa-shopping-cart fa-lg"></i>
-            <span id="cart-count-mobile" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            <span id="cart-count-mobile"
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 <?= $cartItemCount ?> <span class="visually-hidden">items</span>
             </span>
         </a>
@@ -130,7 +141,7 @@ $cartItemCount = getCartItemCount();
 
 <!-- Script para el autocompletado del buscador -->
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const searchInput = document.getElementById('searchInput');
         const suggestionsContainer = document.getElementById('suggestionsContainer');
         const form = searchInput.closest('form');
@@ -138,7 +149,7 @@ $cartItemCount = getCartItemCount();
         let timeoutId;
         const BASE_URL = '<?= base_url() ?>';
 
-        searchInput.addEventListener('input', function() {
+        searchInput.addEventListener('input', function () {
             clearTimeout(timeoutId);
             const searchTerm = this.value.trim();
 
@@ -167,13 +178,13 @@ $cartItemCount = getCartItemCount();
         });
 
         // Ocultar sugerencias cuando se pierde el foco del input
-        searchInput.addEventListener('blur', function() {
+        searchInput.addEventListener('blur', function () {
             setTimeout(() => {
                 suggestionsContainer.innerHTML = '';
                 suggestionsContainer.style.display = 'none';
                 suggestionsContainer.style.border = 'none'; // Ocultar borde al perder foco
                 suggestionsContainer.style.padding = '0'; // Ocultar padding al perder foco
-            }, 200); 
+            }, 200);
         });
 
         function displaySuggestions(suggestions) {
@@ -199,7 +210,7 @@ $cartItemCount = getCartItemCount();
                 suggestionItem.dataset.type = suggestion.type;
                 suggestionItem.dataset.id = suggestion.id;
 
-                suggestionItem.addEventListener('click', function(e) {
+                suggestionItem.addEventListener('click', function (e) {
                     e.preventDefault();
 
                     searchInput.value = this.dataset.value;
