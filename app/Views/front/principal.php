@@ -114,21 +114,20 @@
         $categorias = [
             // Selección alternativa de iconos de Font Awesome
             ['icon_class' => 'fa-solid fa-server',             'name' => 'Almacenamiento',    'color' => '#12b886'], // 'server' es más moderno que 'hard-drive'
-            ['icon_class' => 'fa-solid fa-desktop',            'name' => 'Monitores',         'color' => '#fa5252'], // 'desktop' es clásico para monitor
-            ['icon_class' => 'fa-solid fa-laptop',             'name' => 'Notebooks',         'color' => '#228be6'], // 'laptop' es el mejor
-            ['icon_class' => 'fa-solid fa-keyboard',           'name' => 'Periféricos',       'color' => '#fd7e14'], // 'keyboard' es un buen representante de periféricos
+            ['icon_class' => 'fa-solid fa-desktop',            'name' => 'Monitores',          'color' => '#fa5252'], // 'desktop' es clásico para monitor
+            ['icon_class' => 'fa-solid fa-laptop',             'name' => 'Notebooks',          'color' => '#228be6'], // 'laptop' es el mejor
+            ['icon_class' => 'fa-solid fa-keyboard',           'name' => 'Periféricos',        'color' => '#fd7e14'], // 'keyboard' es un buen representante de periféricos
             ['icon_class' => 'fa-solid fa-bolt',               'name' => 'Fuentes de Poder',  'color' => '#20c997'], // 'bolt' (rayo) para energía
             ['icon_class' => 'fa-solid fa-microchip',          'name' => 'Procesadores',      'color' => '#ae3ec9'], // 'microchip' es ideal para procesadores
         ];
 
         foreach ($categorias as $cat): ?>
             <div class="col-6 col-md-3 col-lg-2">
-                <a href="<?= base_url('catalogo/categoria/' . url_title($cat['name'], '-', true)) ?>" 
-                   class="d-block text-decoration-none p-1 p-md-3 hover-lift rounded border" 
-                   style="background-color: #f8f9fa;">
-                    <i class="<?= esc($cat['icon_class']) ?> category-icon mb-2" 
-                       style="color: <?= esc($cat['color']) ?>; font-size: 3rem;"></i> <p class="small fw-medium text-dark mb-0 mt-1 fs-md-6"><?= esc($cat['name']) ?></p>
-                </a>
+                <div class="d-block text-decoration-none p-1 p-md-3 hover-lift rounded border" 
+                    style="background-color: #f8f9fa;">
+                     <i class="<?= esc($cat['icon_class']) ?> category-icon mb-2" 
+                        style="color: <?= esc($cat['color']) ?>; font-size: 3rem;"></i> <p class="small fw-medium text-dark mb-0 mt-1 fs-md-6"><?= esc($cat['name']) ?></p>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>

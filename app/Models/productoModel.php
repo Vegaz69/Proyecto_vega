@@ -25,40 +25,117 @@ class ProductoModel extends Model
     protected $returnType     = 'array';
 
     // Usar timestamps (created_at, updated_at, deleted_at)
-    protected $useTimestamps = false; // Ajusta a 'true' si usas estos campos
+    protected $useTimestamps = false;
     // protected $createdField  = 'created_at';
     // protected $updatedField  = 'updated_at';
-    // protected $deletedField  = 'deleted_at'; // Para soft deletes si lo implementas más adelante
+    // protected $deletedField  = 'deleted_at';
 
-    // Reglas de validación (opcional, pero recomendable)
-    protected $validationRules    = [];
+    // --- Reglas de validación ---
+    protected $validationRules = [
+        'id_producto' => [
+            'label' => 'ID del Producto',
+            'rules' => 'permit_empty|integer',
+            'errors' => [
+                'integer' => 'El {field} debe ser un número entero válido.'
+            ]
+        ],
+        'nombre' => [
+            'label'  => 'Nombre del Producto',
+            // CAMBIO AQUÍ: max_length[100]
+            'rules'  => 'required|min_length[3]|max_length[100]|alpha_numeric_space|is_unique[productos.nombre,id_producto,{id_producto}]',
+            'errors' => [
+                'required'            => 'El {field} es obligatorio.',
+                'min_length'          => 'El {field} debe tener al menos {param} caracteres.',
+                'max_length'          => 'El {field} no debe exceder los {param} caracteres.', // Este mensaje usará 100
+                'alpha_numeric_space' => 'El {field} solo puede contener letras, números y espacios.',
+                'is_unique'           => 'Ya existe un producto con este {field}.'
+            ]
+        ],
+        'marca' => [
+            'label'  => 'Marca',
+            'rules'  => 'required|min_length[2]|max_length[100]|alpha_numeric_space',
+            'errors' => [
+                'required'            => 'La {field} es obligatoria.',
+                'min_length'          => 'La {field} debe tener al menos {param} caracteres.',
+                'max_length'          => 'La {field} no debe exceder los {param} caracteres.',
+                'alpha_numeric_space' => 'La {field} solo puede contener letras, números y espacios.'
+            ]
+        ],
+        'id_categoria' => [
+            'label'  => 'Categoría',
+            'rules'  => 'required|integer|is_natural_no_zero|exist_in_table[categorias,id_categoria]',
+            'errors' => [
+                'required'           => 'La {field} es obligatoria.',
+                'integer'            => 'Debe seleccionar una {field} válida.',
+                'is_natural_no_zero' => 'Debe seleccionar una {field} válida.',
+                'exist_in_table'     => 'La {field} seleccionada no existe.'
+            ]
+        ],
+        'precio' => [
+            'label'  => 'Precio',
+            'rules'  => 'required|numeric|greater_than[0]|decimal',
+            'errors' => [
+                'required'     => 'El {field} es obligatorio.',
+                'numeric'      => 'El {field} debe ser un número.',
+                'greater_than' => 'El {field} debe ser mayor a 0.',
+                'decimal'      => 'El {field} debe ser un número decimal válido.'
+            ]
+        ],
+        'descripcion' => [
+            'label'  => 'Descripción',
+            'rules'  => 'max_length[65535]',
+            'errors' => [
+                'max_length' => 'La {field} no debe exceder los {param} caracteres.'
+            ]
+        ],
+        'stock' => [
+            'label'  => 'Stock',
+            'rules'  => 'required|integer|greater_than_equal_to[0]',
+            'errors' => [
+                'required'              => 'El {field} es obligatorio.',
+                'integer'               => 'El {field} debe ser un número entero.',
+                'greater_than_equal_to' => 'El {field} no puede ser negativo.'
+            ]
+        ],
+        'activo' => [
+            'label'  => 'Estado Activo',
+            'rules'  => 'required|in_list[0,1]',
+            'errors' => [
+                'required' => 'El {field} es obligatorio.',
+                'in_list'  => 'El {field} debe ser 0 (inactivo) o 1 (activo).'
+            ]
+        ],
+    ];
+
     protected $validationMessages = [];
     protected $skipValidation     = false;
+    protected $cleanValidationRules = true;
 
-
-     public function buscarProductos($searchTerm, $perPage = 10)
+    protected function exist_in_table(string $str, string $fields, array $data): bool
     {
-        // Unimos la tabla de productos con la tabla de categorías
-        // Asumimos que tienes una tabla 'categorias' con 'id_categoria' y 'nombre'
+        list($table, $field) = explode(',', $fields);
+        $db = \Config\Database::connect();
+        
+        if (empty($table) || empty($field)) {
+            return false;
+        }
+
+        return $db->table($table)->where($field, $str)->countAllResults() > 0;
+    }
+
+    public function buscarProductos($searchTerm, $perPage = 10)
+    {
         $this->select('productos.*, categorias.nombre as categoria_nombre');
         $this->join('categorias', 'categorias.id_categoria = productos.id_categoria', 'left');
-
-        // Filtramos solo productos activos
         $this->where('productos.activo', 1);
-
-        // Condiciones de búsqueda: busca en nombre de producto, marca y nombre de categoría
         if (!empty($searchTerm)) {
             $this->groupStart()
                 ->like('productos.nombre', $searchTerm)
                 ->orLike('productos.marca', $searchTerm)
-                ->orLike('categorias.nombre', $searchTerm) // Busca también en el nombre de la categoría
+                ->orLike('categorias.nombre', $searchTerm)
                 ->groupEnd();
         }
-
-        // Ordena los resultados (puedes ajustar el orden si lo deseas)
         $this->orderBy('productos.nombre', 'ASC');
-
-        // Retorna los resultados paginados
         return $this->paginate($perPage);
     }
 }

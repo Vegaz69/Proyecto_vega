@@ -3,8 +3,6 @@
 <?= $this->section('content') ?>
 
 <div class="container my-3">
-    <h1 class="mb-4 text-center">Explora Nuestro Catálogo</h1>
-
     <?php if (session()->getFlashdata('success')): ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <?= esc(session()->getFlashdata('success')); ?>
@@ -12,48 +10,51 @@
         </div>
     <?php endif; ?>
 
-    <form method="GET" action="<?= base_url('catalogo') ?>" class="mb-4 p-3 bg-light rounded shadow-sm">
-        <div class="row g-3 align-items-center justify-content-center justify-content-md-start">
-            <div class="col-md-4 col-lg-3">
-                <label for="categoria-select" class="form-label visually-hidden">Categoría</label>
-                <select name="categoria" id="categoria-select" class="form-select form-select-sm">
-                    <option value="">Todas las Categorías</option>
-                    <?php foreach ($categorias as $categoria): ?>
-                        <option value="<?= esc($categoria['id_categoria']) ?>" <?= (isset($selected_categoria) && $selected_categoria == $categoria['id_categoria']) ? 'selected' : '' ?>>
-                            <?= esc($categoria['nombre']) ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <label for="orden-select" class="form-label visually-hidden">Ordenar por</label>
-                <select name="orden" id="orden-select" class="form-select form-select-sm">
-                    <option value="">Ordenar por...</option>
-                    <option value="nombre_asc" <?= (isset($orderBy) && $orderBy === 'nombre_asc') ? 'selected' : '' ?>>Nombre (A-Z)</option>
-                    <option value="nombre_desc" <?= (isset($orderBy) && $orderBy === 'nombre_desc') ? 'selected' : '' ?>>Nombre (Z-A)</option>
-                    <option value="precio_asc" <?= (isset($orderBy) && $orderBy === 'precio_asc') ? 'selected' : '' ?>>Precio (Menor a Mayor)</option>
-                    <option value="precio_desc" <?= (isset($orderBy) && $orderBy === 'precio_desc') ? 'selected' : '' ?>>Precio (Mayor a Menor)</option>
-                </select>
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-sm btn-primary">
-                    <i class="fas fa-filter me-1"></i> Filtrar Productos
-                </button>
-            </div>
-            <?php if (!empty($search_query_navbar) || !empty($selected_categoria) || !empty($orderBy)): ?>
-            <div class="col-auto">
-                <a href="<?= base_url('catalogo') ?>" class="btn btn-sm btn-outline-secondary">
-                    <i class="fas fa-times-circle me-1"></i> Limpiar Filtros
-                </a>
-            </div>
-            <?php endif; ?>
+    <div class="row align-items-center mb-4">
+        <div class="col-12 col-md-6 text-center text-md-start">
+            <h4 class="mb-0">Explora Nuestro Catálogo</h4> </div>
+        <div class="col-12 col-md-6 mt-3 mt-md-0 d-flex justify-content-center justify-content-md-end">
+            <form method="GET" action="<?= base_url('catalogo') ?>" class="d-flex align-items-center flex-wrap justify-content-center">
+                <div class="me-2 mb-2 mb-md-0">
+                    <label for="categoria-select" class="form-label visually-hidden">Categoría</label>
+                    <select name="categoria" id="categoria-select" class="form-select form-select-sm">
+                        <option value="">Todas las Categorías</option>
+                        <?php foreach ($categorias as $categoria): ?>
+                            <option value="<?= esc($categoria['id_categoria']) ?>" <?= (isset($selected_categoria) && $selected_categoria == $categoria['id_categoria']) ? 'selected' : '' ?>>
+                                <?= esc($categoria['nombre']) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="me-2 mb-2 mb-md-0">
+                    <label for="orden-select" class="form-label visually-hidden">Ordenar por</label>
+                    <select name="orden" id="orden-select" class="form-select form-select-sm">
+                        <option value="">Ordenar por...</option>
+                        <option value="nombre_asc" <?= (isset($orderBy) && $orderBy === 'nombre_asc') ? 'selected' : '' ?>>Nombre (A-Z)</option>
+                        <option value="nombre_desc" <?= (isset($orderBy) && $orderBy === 'nombre_desc') ? 'selected' : '' ?>>Nombre (Z-A)</option>
+                        <option value="precio_asc" <?= (isset($orderBy) && $orderBy === 'precio_asc') ? 'selected' : '' ?>>Precio (Menor a Mayor)</option>
+                        <option value="precio_desc" <?= (isset($orderBy) && $orderBy === 'precio_desc') ? 'selected' : '' ?>>Precio (Mayor a Menor)</option>
+                    </select>
+                </div>
+                <div class="me-2 mb-2 mb-md-0">
+                    <button type="submit" class="btn btn-sm btn-primary">
+                        <i class="fas fa-filter me-1"></i> Filtrar
+                    </button>
+                </div>
+                <?php if (!empty($search_query_navbar) || !empty($selected_categoria) || !empty($orderBy)): ?>
+                <div>
+                    <a href="<?= base_url('catalogo') ?>" class="btn btn-sm btn-outline-secondary">
+                        <i class="fas fa-times-circle me-1"></i> Limpiar
+                    </a>
+                </div>
+                <?php endif; ?>
 
-            <?php if (!empty($search_query_navbar)): ?>
-                <input type="hidden" name="search_query" value="<?= esc($search_query_navbar) ?>">
-            <?php endif; ?>
+                <?php if (!empty($search_query_navbar)): ?>
+                    <input type="hidden" name="search_query" value="<?= esc($search_query_navbar) ?>">
+                <?php endif; ?>
+            </form>
         </div>
-    </form>
-
+    </div>
     <?php if (!empty($productos)): ?>
         <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3">
             <?php foreach ($productos as $producto): ?>
@@ -129,6 +130,35 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        /* Estilos minimalistas para el espaciado del paginador */
+        .d-flex.justify-content-center.mt-4 nav ul {
+            list-style: none; /* Quita los puntos de la lista */
+            padding: 0;
+            margin: 0;
+            display: flex; /* Para que los elementos se muestren en línea */
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+            justify-content: center; /* Centra los elementos */
+        }
+
+        .d-flex.justify-content-center.mt-4 nav ul li {
+            margin: 0 8px; /* ¡Más espaciado horizontal para que se separen bien! */
+        }
+
+        .d-flex.justify-content-center.mt-4 nav ul li a,
+        .d-flex.justify-content->center.mt-4 nav ul li span {
+            text-decoration: none; /* Asegura que no tengan subrayado */
+            color: #007bff; /* Color azul de enlace por defecto */
+            font-weight: normal; /* Asegura peso de fuente normal */
+            padding: 4px 0; /* Un poco de padding para que sea clicable */
+        }
+
+        .d-flex.justify-content-center.mt-4 nav ul li.active a,
+        .d-flex.justify-content-center.mt-4 nav ul li.current span {
+            font-weight: bold; /* La página activa en negrita */
+            color: #0d6efd; /* Color azul de Bootstrap para el activo */
+            text-decoration: underline; /* Subraya solo el número activo como en tu imagen */
         }
     </style>
 

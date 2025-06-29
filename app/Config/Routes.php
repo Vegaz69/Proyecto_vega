@@ -6,6 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
     
+
     // BUSCADOR BARRA DE NAVEGACION
         $routes->get('catalogo/suggestions', 'CatalogoController::getSuggestions');
 

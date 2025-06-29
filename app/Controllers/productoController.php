@@ -86,78 +86,94 @@ class ProductoController extends Controller
         return view('admin/productos/crear', $data);
     }
 
-public function guardar()
+ public function guardar()
     {
-        $id_producto = $this->request->getPost('id_producto'); // Asegurar que se recibe el ID correctamente
+        // Asegúrate de que $this->productoModel y $this->categoriaModel
+        // estén inicializados en el constructor de tu controlador.
+        // Ejemplo:
+        // public function __construct()
+        // {
+        //     $this->productoModel = new \App\Models\ProductoModel();
+        //     $this->categoriaModel = new \App\Models\CategoriaModel();
+        //     helper(['form', 'url', 'session']); // Asegúrate de que estos helpers estén cargados
+        // }
 
-        // Reglas de validación
-        $rules = [
-            'nombre'         => 'required|min_length[3]|max_length[255]',
-            'marca'          => 'required|min_length[2]|max_length[100]',
-            'id_categoria'   => 'required|is_natural_no_zero',
-            'precio'         => 'required|numeric|greater_than[0]',
-            'descripcion'    => 'max_length[65535]',
-            'stock'          => 'required|integer|greater_than_equal_to[0]',
-            'activo'         => 'permit_empty|integer|in_list[0,1]',
-            'imagen_file'    => 'if_exist|uploaded[imagen_file]|max_size[imagen_file,2048]|ext_in[imagen_file,jpg,jpeg,png,gif]',
+        $id_producto = $this->request->getPost('id_producto'); // Será null si es un nuevo producto
+
+        $data = $this->request->getPost(); // Obtener todos los datos del POST
+
+        // Manejo de la subida de la imagen
+        $imagenFile = $this->request->getFile('imagen_file');
+        $nombreImagen = $this->request->getPost('imagen_actual'); // Conservar imagen actual si no se sube una nueva
+
+        if ($imagenFile && $imagenFile->isValid() && !$imagenFile->hasMoved()) {
+            $nombreImagen = $imagenFile->getRandomName();
+            $imagenFile->move(ROOTPATH . 'public/uploads/productos', $nombreImagen);
+            if ($id_producto && !empty($this->request->getPost('imagen_actual'))) {
+                $oldImagePath = ROOTPATH . 'public/uploads/productos/' . $this->request->getPost('imagen_actual');
+                if (file_exists($oldImagePath) && is_file($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+        } elseif ($imagenFile && $imagenFile->hasMoved()) {
+            // Si la imagen ya se ha movido (ej. por una ejecución previa), no hacer nada
+        } else {
+            $nombreImagen = $this->request->getPost('imagen_actual');
+        }
+
+        $productData = [
+            'nombre'       => $data['nombre'],
+            'marca'        => $data['marca'],
+            'id_categoria' => $data['id_categoria'],
+            'precio'       => $data['precio'],
+            'descripcion'  => $data['descripcion'],
+            'stock'        => $data['stock'],
+            'activo'       => isset($data['activo']) ? 1 : 0,
+            'imagen'       => $nombreImagen
         ];
 
-        if (!$this->validate($rules)) {
-            $data['categorias'] = $this->categoriaModel->findAll();
-            $data['producto'] = ($id_producto) ? $this->productoModel->find($id_producto) : null;
-            return view('admin/productos/crear', $data);
+        if ($id_producto) {
+            $productData['id_producto'] = $id_producto;
         }
 
-        // --- INICIO: Nueva lógica de validación para categoría activa ---
-        $id_categoria_seleccionada = $this->request->getPost('id_categoria');
-        $categoria = $this->categoriaModel->find($id_categoria_seleccionada);
+        // --- INICIO: Lógica de validación y redirección explícita ---
+        if (!$this->productoModel->validate($productData)) {
+            session()->setFlashdata('errors', $this->productoModel->errors());
+            session()->setFlashdata('old_input', $this->request->getPost()); // Pasa todos los datos del POST
 
-        // Si la categoría no existe o está inactiva
-        if (!$categoria || $categoria['activo'] == 0) {
-            session()->setFlashdata('error', 'No se puede crear el producto: La categoría seleccionada no existe o está inactiva.');
-            $data['categorias'] = $this->categoriaModel->findAll(); // Recargar categorías para la vista
-            $data['producto'] = ($id_producto) ? $this->productoModel->find($id_producto) : null; // Si es edición, recargar producto
-            return view('admin/productos/crear', $data);
+            if ($id_producto) {
+                // Redirige explícitamente a la URL de edición
+                return redirect()->to(base_url('admin/productos/editar/' . $id_producto));
+            } else {
+                // Redirige explícitamente a la URL de creación
+                return redirect()->to(base_url('admin/productos/crear'));
+            }
         }
-        // --- FIN: Nueva lógica de validación para categoría activa ---
+        // --- FIN: Lógica de validación y redirección explícita ---
 
-
-        // Procesar la imagen
-        $file = $this->request->getFile('imagen_file');
-        $nombreImagen = $this->request->getPost('imagen_actual');
-
-        if ($file && $file->isValid() && !$file->hasMoved()) {
-            $nombreImagen = $file->getRandomName();
-            $file->move(ROOTPATH . 'public/uploads/productos', $nombreImagen);
-
-            if ($id_producto && !empty($this->request->getPost('imagen_actual'))) {
-                $rutaImagenAnterior = ROOTPATH . 'public/uploads/productos/' . $this->request->getPost('imagen_actual');
-                if (file_exists($rutaImagenAnterior)) {
-                    unlink($rutaImagenAnterior);
-                }
+        // Si la validación es exitosa
+        try {
+            if ($id_producto) {
+                $this->productoModel->update($id_producto, $productData);
+                session()->setFlashdata('success', 'Producto actualizado correctamente.');
+            } else {
+                $this->productoModel->insert($productData);
+                session()->setFlashdata('success', 'Producto agregado correctamente.');
+            }
+        } catch (\ReflectionException $e) {
+            session()->setFlashdata('error', 'Error al guardar el producto: ' . $e->getMessage());
+            // Si hay un error de DB después de la validación, redirigir a la vista correcta con old_input
+            session()->setFlashdata('old_input', $this->request->getPost());
+            if ($id_producto) {
+                return redirect()->to(base_url('admin/productos/editar/' . $id_producto));
+            } else {
+                return redirect()->to(base_url('admin/productos/crear'));
             }
         }
 
-        // Datos del producto
-        $data = [
-            'nombre'         => $this->request->getPost('nombre'),
-            'marca'          => $this->request->getPost('marca'),
-            'id_categoria'   => $this->request->getPost('id_categoria'),
-            'precio'         => $this->request->getPost('precio'),
-            'descripcion'    => $this->request->getPost('descripcion'),
-            'stock'          => $this->request->getPost('stock'),
-            'activo'         => $this->request->getPost('activo') ? 1 : 0,
-            'imagen'         => $nombreImagen,
-        ];
-
-        if ($id_producto && $this->productoModel->find($id_producto)) {
-            $this->productoModel->update($id_producto, $data);
-            return redirect()->to(base_url('admin/productos'))->with('success', 'Producto actualizado correctamente.');
-        } else {
-            $this->productoModel->insert($data);
-            return redirect()->to(base_url('admin/productos'))->with('success', 'Producto agregado correctamente.');
-        }
+        return redirect()->to(base_url('admin/productos'));
     }
+
 
 
 
