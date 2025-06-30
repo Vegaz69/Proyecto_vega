@@ -91,7 +91,7 @@
                     <div class="card-body">
                         <h5 class="card-title fw-bold mb-1"><i class="fas fa-user me-2"></i> Zini Samuel</h5>
                         <p class="card-text text-primary">Directora de Finanzas</p>
-                        <p class="text-muted small">Experta en estrategia financiera.</p>
+                        <p class="text-muted small">Experto en estrategia financiera.</p>
                     </div>
                 </div>
                 <div class="card shadow-sm p-2 m-3 transform-on-hover" style="max-width: 250px;">

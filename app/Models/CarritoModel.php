@@ -53,56 +53,35 @@ class CarritoModel extends Model
      * @param int $id_usuario El ID del usuario cuyo carrito se va a vaciar.
      * @return bool True si el carrito se vació correctamente, false en caso contrario.
      */
-    public function vaciarCarrito(int $id_usuario): bool
+ public function vaciarCarrito(int $id_usuario): bool
     {
         log_message('debug', 'Iniciando vaciarCarrito para usuario ID: ' . $id_usuario);
 
-        $items_en_carrito = $this->where('id_usuario', $id_usuario)->findAll();
+        // No es necesario obtener los ítems del carrito si solo vamos a eliminarlos
+        // y no vamos a devolver stock.
+        // $items_en_carrito = $this->where('id_usuario', $id_usuario)->findAll();
 
-        if (empty($items_en_carrito)) {
-            log_message('debug', 'Carrito ya vacío para usuario ID: ' . $id_usuario);
-            return true; // No hay nada que vaciar
-        }
+        // if (empty($items_en_carrito)) {
+        //     log_message('debug', 'Carrito ya vacío para usuario ID: ' . $id_usuario);
+        //     return true; // No hay nada que vaciar
+        // }
 
         $this->db->transBegin();
-        log_message('debug', 'Transacción de BD iniciada.');
+        log_message('debug', 'Transacción de BD iniciada para vaciar carrito.');
 
         try {
-            foreach ($items_en_carrito as $item) {
-                $producto_id = $item['id_producto'];
-                $cantidad_en_carrito = $item['cantidad'];
-
-                log_message('debug', 'Procesando item: Producto ID ' . $producto_id . ', Cantidad en carrito: ' . $cantidad_en_carrito);
-
-                $producto = $this->productoModel->find($producto_id);
-
-                if ($producto) {
-                    $stock_actual_bd = $producto['stock'];
-                    $nuevo_stock = $stock_actual_bd + $cantidad_en_carrito;
-
-                    log_message('debug', 'Producto ID ' . $producto_id . ': Stock actual BD: ' . $stock_actual_bd . ', Cantidad a devolver: ' . $cantidad_en_carrito . ', Nuevo stock calculado: ' . $nuevo_stock);
-
-                    // Actualizar el stock del producto
-                    $updateResult = $this->productoModel->update($producto_id, ['stock' => $nuevo_stock]);
-                    log_message('debug', 'Resultado de actualización de stock para Producto ID ' . $producto_id . ': ' . ($updateResult ? 'Éxito' : 'Fallo'));
-
-                } else {
-                    log_message('error', 'Producto con ID ' . $producto_id . ' no encontrado al vaciar carrito. No se pudo restaurar el stock.');
-                }
-            }
-
             // Eliminar todos los ítems del carrito para ese usuario
             $deleteResult = $this->where('id_usuario', $id_usuario)->delete();
             log_message('debug', 'Resultado de eliminación de ítems del carrito para usuario ID ' . $id_usuario . ': ' . ($deleteResult ? 'Éxito' : 'Fallo'));
 
             $this->db->transCommit();
-            log_message('debug', 'Transacción de BD confirmada.');
+            log_message('debug', 'Transacción de BD confirmada para vaciar carrito.');
             return true;
 
         } catch (\Exception $e) {
             $this->db->transRollback();
-            log_message('error', 'Error CRÍTICO al vaciar el carrito y devolver stock: ' . $e->getMessage());
+            log_message('error', 'Error CRÍTICO al vaciar el carrito: ' . $e->getMessage());
             return false;
         }
-    }
+}
 }
