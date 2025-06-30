@@ -1,28 +1,40 @@
-<?php
-namespace App\Controllers;
+<?php namespace App\Controllers;
+
 use App\Models\CarritoModel;
 use App\Models\ProductoModel;
 use App\Models\VentaModel;
 use App\Models\DetalleVentaModel;
-use CodeIgniter\Controller;
+// Importa las interfaces correctas para la firma de initController
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+use Psr\Log\LoggerInterface;
 
-class CarritoController extends Controller {
-
+class CarritoController extends BaseController 
+{
     protected $carritoModel;
     protected $productoModel;
     protected $ventaModel;
     protected $detalleVentaModel;
 
-    public function __construct()
+    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
+        // Llama al initController de la clase padre (BaseController)
+        parent::initController($request, $response, $logger); 
+
         $this->carritoModel = new CarritoModel();
         $this->productoModel = new ProductoModel();
         $this->ventaModel = new VentaModel();
         $this->detalleVentaModel = new DetalleVentaModel();
+        
+        // Asegúrate de que 'cart_helper' esté cargado.
+        helper(['form', 'url', 'session', 'cart_helper']); 
     }
 
     public function agregar()
     {
+        // Obtener la instancia de la base de datos explícitamente
+        $db = \Config\Database::connect();
+
         $request = service('request');
         $isAjax = $request->isAJAX(); // Detectar si la solicitud es AJAX
 
@@ -30,20 +42,19 @@ class CarritoController extends Controller {
 
         // --- Manejo de la sesión de usuario ---
         if (!$id_usuario) {
-    $message = 'Debes iniciar sesión o registrarte para añadir productos al carrito.';
-    if ($isAjax) {
-        return $this->response->setJSON([
-            'success' => false,
-            'message' => $message,
-            'cart_item_count' => getCartItemCount(), // Usamos la función del helper
-            'redirect_to_login' => true // Añadimos una bandera para que el JS sepa que debe redirigir o mostrar opciones
-        ]);
-    } else {
-        session()->setFlashdata('error_add_to_cart', $message);
-        // Podríamos redirigir directamente al login si no es AJAX y queremos forzarlo
-        return redirect()->to(base_url('login'));
-    }
-}
+            $message = 'Debes iniciar sesión o registrarte para añadir productos al carrito.';
+            if ($isAjax) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => $message,
+                    'cart_item_count' => getCartItemCount(), // Usamos la función del helper
+                    'redirect_to_login' => true // Añadimos una bandera para que el JS sepa que debe redirigir o mostrar opciones
+                ]);
+            } else {
+                session()->setFlashdata('error_add_to_cart', $message);
+                return redirect()->to(base_url('login'));
+            }
+        }
 
         $id_producto = $request->getPost('id_producto');
         $cantidad = (int) $request->getPost('cantidad');
@@ -101,47 +112,82 @@ class CarritoController extends Controller {
             ->where('id_usuario', $id_usuario)
             ->first();
 
-        $new_stock = $producto_real['stock']; // Variable para almacenar el nuevo stock visible
+        $new_stock_for_response = $producto_real['stock']; // Variable para almacenar el nuevo stock visible
 
-        // --- Lógica para actualizar o insertar en el carrito y actualizar stock ---
-        if ($producto_en_carrito) {
-            $nueva_cantidad = $producto_en_carrito['cantidad'] + $cantidad;
+        // Iniciar una transacción de base de datos para asegurar la atomicidad
+        $db->transBegin(); // Usando la variable $db local
 
-            // Validación de stock para la nueva cantidad total en el carrito
-            if ($producto_real['stock'] < $nueva_cantidad) {
-                $message = 'No se puede añadir más stock de ' . esc($producto_real['nombre']) . '. El stock disponible es ' . esc($producto_real['stock']) . ' y ya tienes ' . esc($producto_en_carrito['cantidad']) . ' en el carrito.';
-                if ($isAjax) {
-                    return $this->response->setJSON([
-                        'success' => false,
-                        'message' => $message,
-                        'cart_item_count' => getCartItemCount(),
-                        'new_stock' => $producto_real['stock']
-                    ]);
-                } else {
-                    session()->setFlashdata('error_add_to_cart', $message);
-                    return redirect()->back();
+        try {
+            // --- Lógica para actualizar o insertar en el carrito y actualizar stock ---
+            if ($producto_en_carrito) {
+                $nueva_cantidad_en_carrito = $producto_en_carrito['cantidad'] + $cantidad;
+
+                // Validación de stock para la nueva cantidad total en el carrito
+                // Asegurarse de que el stock real del producto es suficiente para la nueva cantidad total en el carrito
+                // considerando lo que ya está en el carrito.
+                // El stock disponible para añadir es el stock_real menos lo que ya está en el carrito.
+                $stock_disponible_para_nueva_adicion = $producto_real['stock'] - $producto_en_carrito['cantidad'];
+
+                if ($stock_disponible_para_nueva_adicion < $cantidad) {
+                    $message = 'No se puede añadir ' . $cantidad . ' unidades más de ' . esc($producto_real['nombre']) . '. El stock disponible es ' . esc($producto_real['stock']) . ' y ya tienes ' . esc($producto_en_carrito['cantidad']) . ' en el carrito.';
+                    $db->transRollback(); // Usando la variable $db local
+                    if ($isAjax) {
+                        return $this->response->setJSON([
+                            'success' => false,
+                            'message' => $message,
+                            'cart_item_count' => getCartItemCount(),
+                            'new_stock' => $producto_real['stock'] // Devolver el stock actual sin cambios
+                        ]);
+                    } else {
+                        session()->setFlashdata('error_add_to_cart', $message);
+                        return redirect()->back();
+                    }
                 }
+
+                $data_update = [
+                    'cantidad' => $nueva_cantidad_en_carrito,
+                ];
+                $this->carritoModel->update($producto_en_carrito['id_carrito'], $data_update);
+                $message = 'Cantidad del producto actualizada en el carrito.';
+
+                // Deducir la cantidad *recién añadida* del stock real del producto
+                $this->productoModel->update($id_producto, ['stock' => $producto_real['stock'] - $cantidad]);
+                $new_stock_for_response = $producto_real['stock'] - $cantidad;
+
+            } else {
+                // Si el producto no está en el carrito, insertarlo
+                $data = [
+                    'id_producto' => $id_producto,
+                    'id_usuario' => $id_usuario,
+                    'nombre_producto' => $producto_real['nombre'],
+                    'precio_unitario' => $producto_real['precio'],
+                    'cantidad' => $cantidad,
+                ];
+                $this->carritoModel->insert($data);
+                $message = 'Producto añadido al carrito correctamente.';
+
+                // Deducir la cantidad añadida del stock real del producto
+                $this->productoModel->update($id_producto, ['stock' => $producto_real['stock'] - $cantidad]);
+                $new_stock_for_response = $producto_real['stock'] - $cantidad;
             }
 
-            $data_update = [
-                'cantidad' => $nueva_cantidad,
-            ];
-            $this->carritoModel->update($producto_en_carrito['id_carrito'], $data_update);
-            $message = 'Cantidad del producto actualizada en el carrito.';
-            $new_stock -= $cantidad; // El stock real del producto disminuye con lo que se acaba de añadir
-        } else {
-            $data = [
-                'id_producto' => $id_producto,
-                'id_usuario' => $id_usuario,
-                'nombre_producto' => $producto_real['nombre'],
-                'precio_unitario' => $producto_real['precio'],
-                'cantidad' => $cantidad,
-            ];
-            $this->carritoModel->insert($data);
-            $message = 'Producto añadido al carrito correctamente.';
-            $new_stock -= $cantidad; // El stock real del producto disminuye
-        }
+            $db->transCommit(); // Confirmar la transacción si todo fue bien
 
+        } catch (\Exception $e) {
+            $db->transRollback(); // Revertir la transacción si algo falla
+            $message = 'Error al procesar el carrito y el stock: ' . $e->getMessage();
+            if ($isAjax) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => $message,
+                    'cart_item_count' => getCartItemCount(),
+                    'new_stock' => $producto_real['stock'] // Devolver stock actual sin cambios
+                ]);
+            } else {
+                session()->setFlashdata('error_add_to_cart', $message);
+                return redirect()->back();
+            }
+        }
 
         // --- Respuesta basada en el tipo de solicitud (AJAX vs. HTTP normal) ---
         if ($isAjax) {
@@ -149,7 +195,7 @@ class CarritoController extends Controller {
                 'success' => true,
                 'message' => $message,
                 'cart_item_count' => getCartItemCount(), // Usamos la función del helper
-                'new_stock' => $new_stock // Devuelve el nuevo stock
+                'new_stock' => $new_stock_for_response // Devuelve el nuevo stock
             ]);
         } else {
             session()->setFlashdata('success_add_to_cart', $message);
@@ -186,6 +232,9 @@ class CarritoController extends Controller {
     }
 
     public function eliminar($id_carrito_item = null) {
+        // Obtener la instancia de la base de datos explícitamente
+        $db = \Config\Database::connect();
+
         $request = service('request');
         $isAjax = $request->isAJAX(); // Detectar si la solicitud es AJAX
 
@@ -240,38 +289,64 @@ class CarritoController extends Controller {
             }
         }
 
-        // 5. Devolver el stock al producto
-        $producto = $this->productoModel->find($item_carrito['id_producto']);
-        if ($producto) {
-            $nuevo_stock = $producto['stock'] + $item_carrito['cantidad'];
-            $this->productoModel->update($producto['id_producto'], ['stock' => $nuevo_stock]);
-            // Opcional: Si tienes un campo 'activo' y se desactivó por stock 0, podrías reactivarlo si el nuevo stock es > 0
-            if ($producto['activo'] == 0 && $nuevo_stock > 0) {
-                   $this->productoModel->update($producto['id_producto'], ['activo' => 1]);
-                   log_message('info', 'Producto ID ' . $item_carrito['id_producto'] . ' reactivado automáticamente por devolución de stock.');
+        // Iniciar una transacción para asegurar que stock y carrito se actualicen juntos
+        $db->transBegin(); // Usando la variable $db local
+
+        try {
+            // 5. Devolver el stock al producto
+            $producto = $this->productoModel->find($item_carrito['id_producto']);
+            if ($producto) {
+                $nuevo_stock = $producto['stock'] + $item_carrito['cantidad'];
+                $this->productoModel->update($producto['id_producto'], ['stock' => $nuevo_stock]);
+                
+                // Opcional: Si tienes un campo 'activo' y se desactivó por stock 0, podrías reactivarlo si el nuevo stock es > 0
+                if ($producto['activo'] == 0 && $nuevo_stock > 0) {
+                    $this->productoModel->update($producto['id_producto'], ['activo' => 1]);
+                    log_message('info', 'Producto ID ' . $item_carrito['id_producto'] . ' reactivado automáticamente por devolución de stock.');
+                }
+            } else {
+                log_message('error', 'Producto con ID ' . $item_carrito['id_producto'] . ' no encontrado al eliminar del carrito. No se pudo restaurar el stock.');
             }
-        }
 
-        // 6. Eliminar el ítem del carrito
-        $this->carritoModel->delete($id_carrito_item);
+            // 6. Eliminar el ítem del carrito
+            $this->carritoModel->delete($id_carrito_item);
 
-        $message = 'Producto eliminado del carrito correctamente.';
+            $db->transCommit(); // Usando la variable $db local
+            $message = 'Producto eliminado del carrito correctamente.';
 
-        // 7. Respuesta (AJAX vs. Redirección)
-        if ($isAjax) {
-            return $this->response->setJSON([
-                'success' => true,
-                'message' => $message,
-                'cart_item_count' => getCartItemCount() // Actualizar el contador del carrito
-            ]);
-        } else {
-            session()->setFlashdata('success_cart', $message);
-            return redirect()->to(base_url('carrito/ver'));
+            // 7. Respuesta (AJAX vs. Redirección)
+            if ($isAjax) {
+                return $this->response->setJSON([
+                    'success' => true,
+                    'message' => $message,
+                    'cart_item_count' => getCartItemCount() // Actualizar el contador del carrito
+                ]);
+            } else {
+                session()->setFlashdata('success_cart', $message);
+                return redirect()->to(base_url('carrito/ver'));
+            }
+        } catch (\Exception $e) {
+            $db->transRollback(); // Usando la variable $db local
+            log_message('error', 'Error al eliminar producto del carrito y devolver stock: ' . $e->getMessage());
+            $message = 'Ocurrió un error al eliminar el producto del carrito. Intenta de nuevo.';
+            if ($isAjax) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => $message,
+                    'cart_item_count' => getCartItemCount()
+                ]);
+            } else {
+                session()->setFlashdata('error_cart', $message);
+                return redirect()->back();
+            }
         }
     }
 
 
     public function actualizar() {
+        // Obtener la instancia de la base de datos explícitamente
+        $db = \Config\Database::connect();
+
         $id_usuario = session()->get('id');
         if (!$id_usuario) {
             session()->setFlashdata('error_cart', 'Debes iniciar sesión para realizar esta acción.');
@@ -279,9 +354,9 @@ class CarritoController extends Controller {
         }
 
         $id_carrito = $this->request->getPost('id_carrito');
-        $cantidad = (int) $this->request->getPost('cantidad');
+        $cantidad_nueva = (int) $this->request->getPost('cantidad'); // Renombrado para claridad
 
-        if ($cantidad < 1) {
+        if ($cantidad_nueva < 1) {
             return redirect()->to(base_url('carrito/ver'))->with('error_cart', 'La cantidad debe ser al menos 1.');
         }
 
@@ -292,19 +367,57 @@ class CarritoController extends Controller {
         }
 
         $producto_real = $this->productoModel->find($producto_en_carrito['id_producto']);
-        if (!$producto_real || $producto_real['stock'] < $cantidad) {
-            return redirect()->to(base_url('carrito/ver'))->with('error_cart', 'No hay suficiente stock disponible para la cantidad solicitada. Stock actual: ' . ($producto_real['stock'] ?? 0));
+        if (!$producto_real) {
+            return redirect()->to(base_url('carrito/ver'))->with('error_cart', 'El producto original no existe.');
         }
 
-        $this->carritoModel->set(['cantidad' => $cantidad])
-            ->where('id_carrito', $id_carrito)
-            ->update();
+        $cantidad_anterior_en_carrito = $producto_en_carrito['cantidad'];
+        $diferencia_cantidad = $cantidad_nueva - $cantidad_anterior_en_carrito;
 
-        return redirect()->to(base_url('carrito/ver'))->with('success_cart', 'Cantidad actualizada.');
+        // Iniciar una transacción para asegurar la atomicidad
+        $db->transBegin(); // Usando la variable $db local
+
+        try {
+            // Validar stock antes de actualizar
+            if ($diferencia_cantidad > 0) { // Si la cantidad aumenta, necesitamos más stock
+                if ($producto_real['stock'] < $diferencia_cantidad) {
+                    $db->transRollback(); // Usando la variable $db local
+                    return redirect()->to(base_url('carrito/ver'))->with('error_cart', 'No hay suficiente stock disponible para aumentar la cantidad. Stock actual: ' . ($producto_real['stock'] ?? 0));
+                }
+            }
+
+            // Actualizar la cantidad en el carrito
+            $this->carritoModel->set(['cantidad' => $cantidad_nueva])
+                ->where('id_carrito', $id_carrito)
+                ->update();
+
+            // Actualizar el stock del producto
+            $nuevo_stock_producto = $producto_real['stock'] - $diferencia_cantidad;
+            $this->productoModel->update($producto_real['id_producto'], ['stock' => $nuevo_stock_producto]);
+
+            // Lógica para activar/desactivar producto si el stock cambia a 0 o más
+            if ($nuevo_stock_producto <= 0 && $producto_real['activo'] == 1) {
+                $this->productoModel->update($producto_real['id_producto'], ['activo' => 0]);
+                log_message('info', 'Producto ID ' . $producto_real['id_producto'] . ' desactivado automáticamente por stock 0.');
+            } elseif ($nuevo_stock_producto > 0 && $producto_real['activo'] == 0) {
+                $this->productoModel->update($producto_real['id_producto'], ['activo' => 1]);
+                log_message('info', 'Producto ID ' . $producto_real['id_producto'] . ' reactivado automáticamente por stock > 0.');
+            }
+
+
+            $db->transCommit(); // Usando la variable $db local
+            return redirect()->to(base_url('carrito/ver'))->with('success_cart', 'Cantidad actualizada.');
+
+        } catch (\Exception $e) {
+            $db->transRollback(); // Usando la variable $db local
+            log_message('error', 'Error al actualizar cantidad en carrito: ' . $e->getMessage());
+            return redirect()->to(base_url('carrito/ver'))->with('error_cart', 'Ocurrió un error al actualizar la cantidad. Intenta de nuevo.');
+        }
     }
 
     public function confirmar_compra()
     {
+        // Obtener la instancia de la base de datos explícitamente
         $db = \Config\Database::connect();
         $db->transStart();
 
@@ -389,19 +502,17 @@ class CarritoController extends Controller {
             }
 
             foreach ($items_carrito as $item) {
-                // Obtener el stock actual del producto DENTRO de la transacción para la validación final
+                // Obtener el producto real para verificar su existencia, no para revalidar stock aquí.
                 $producto_real = $this->productoModel->find($item['id_producto']);
-                log_message('debug', 'Validando stock para producto ID: ' . $item['id_producto'] . '. Cantidad solicitada: ' . $item['cantidad'] . '. Stock actual en DB: ' . ($producto_real['stock'] ?? 'NULL'));
-
-                // Validar stock justo antes de la inserción y el descuento
-                if (!$producto_real || $producto_real['stock'] < $item['cantidad']) {
-                    // Si no hay suficiente stock, revertir toda la transacción y mostrar error.
-                    session()->setFlashdata('error_cart', 'No hay suficiente stock de "' . esc($item['nombre_producto']) . '". Stock actual: ' . ($producto_real['stock'] ?? 0) . '. Por favor, ajusta la cantidad en tu carrito.');
-                    $db->transRollback(); // Revertir todo lo que se hizo en la transacción
+                
+                // Validar que el producto existe. Si no existe, no podemos procesar la venta.
+                if (!$producto_real) {
+                    session()->setFlashdata('error_cart', 'El producto "' . esc($item['nombre_producto']) . '" ya no está disponible. Por favor, ajusta tu carrito.');
+                    $db->transRollback();
                     return redirect()->to(base_url('carrito/ver'));
                 }
 
-                // Si hay stock, se procede a insertar el detalle de la venta
+                // Si hay stock (ya se validó y dedujo al agregar al carrito), se procede a insertar el detalle de la venta
                 $data_detalle = [
                     'id_venta'      => $id_venta,
                     'id_producto'   => $item['id_producto'],
@@ -412,34 +523,31 @@ class CarritoController extends Controller {
                 ];
                 $this->detalleVentaModel->insert($data_detalle);
 
-                // CAMBIO AQUÍ: Sumamos el subtotal al total calculado
+                // Sumamos el subtotal al total calculado de la venta
                 $total_venta_calculado += $item['subtotal'];
 
-
-                // Calcular y reducir el stock del producto
-                $nuevo_stock = $producto_real['stock'] - $item['cantidad'];
-                $this->productoModel->update($item['id_producto'], [
-                    'stock' => $nuevo_stock
-                ]);
-
-                // Lógica para desactivar producto si el stock llega a 0 o menos
-                if ($nuevo_stock <= 0) {
+                // NOTA IMPORTANTE: La deducción de stock se hizo en la función 'agregar()'.
+                // Aquí solo necesitamos asegurarnos de que el producto esté marcado como inactivo si su stock llegó a 0
+                // debido a la compra actual (aunque esto también podría haberse manejado en 'agregar').
+                // Si el stock ya es 0 y el producto está activo, lo desactivamos.
+                if ($producto_real['stock'] <= 0 && $producto_real['activo'] == 1) {
                     $this->productoModel->update($item['id_producto'], [
                         'activo' => 0
                     ]);
-                    log_message('info', 'Producto ID ' . $item['id_producto'] . ' desactivado automáticamente por stock 0.');
+                    log_message('info', 'Producto ID ' . $item['id_producto'] . ' desactivado automáticamente por stock 0 durante la confirmación de compra.');
                 }
             }
 
-            // CAMBIO AQUÍ: Actualizar el campo total_venta de la venta principal
+            // Actualizar el campo total_venta de la venta principal
             $this->ventaModel->update($id_venta, ['total_venta' => $total_venta_calculado]);
 
-            // Vaciar el carrito del usuario después de que la venta y sus detalles se hayan guardado y el stock actualizado
+            // Vaciar el carrito del usuario después de que la venta y sus detalles se hayan guardado
             $this->carritoModel->where('id_usuario', $id_usuario)->delete();
 
-            $db->transComplete();
+            $db->transComplete(); // Usando la variable $db local
 
             if ($db->transStatus() === FALSE) {
+                // Si la transacción falló en algún punto (ya se hizo rollback)
                 session()->setFlashdata('error_cart', 'Hubo un error al procesar tu pedido. Por favor, inténtalo de nuevo.');
                 return redirect()->to(base_url('carrito/ver'));
             } else {
@@ -448,7 +556,7 @@ class CarritoController extends Controller {
             }
 
         } catch (\Exception $e) {
-            $db->transRollback();
+            $db->transRollback(); // Usando la variable $db local
             log_message('error', 'Error al confirmar la compra: ' . $e->getMessage());
             session()->setFlashdata('error_cart', 'Ocurrió un error inesperado al procesar tu pedido. Intenta de nuevo más tarde.');
             return redirect()->to(base_url('carrito/ver'));
@@ -457,6 +565,9 @@ class CarritoController extends Controller {
 
     public function vaciar()
     {
+        // Obtener la instancia de la base de datos explícitamente
+        $db = \Config\Database::connect();
+
         $session = session();
         $id_usuario = $session->get('id'); // Obtén el ID del usuario logueado
 
@@ -467,10 +578,11 @@ class CarritoController extends Controller {
         }
 
         // Obtener el carrito actual de la base de datos para verificar si está vacío
-        $productosEnBD = $this->carritoModel->where('id_usuario', $id_usuario)->countAllResults();
+        // Es mejor usar getProductosCarrito para obtener los ítems con sus cantidades para devolver el stock
+        $productosEnBD = $this->carritoModel->where('id_usuario', $id_usuario)->findAll(); // Usar findAll para obtener los items
 
-        if ($productosEnBD > 0) {
-            // Si hay productos en la BD, intenta vaciarlos
+        if (!empty($productosEnBD)) { // Cambiado a !empty() para verificar si hay ítems
+            // Si hay productos en la BD, intenta vaciarlos y devolver el stock
             if ($this->carritoModel->vaciarCarrito($id_usuario)) {
                 // Si se vació de la BD, también vacía la sesión si es que la manejabas
                 $session->remove('cart'); // Opcional si solo confías en la BD
