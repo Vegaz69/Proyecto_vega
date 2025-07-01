@@ -1,5 +1,5 @@
-<?= view('front/head_view') ?>
-<?= view('front/nav_view') ?>
+<?= $this->extend('front/layout') ?>
+<?= $this->section('content') ?>
 
 <div class="container mt-4">
     <div class="row justify-content-center">
@@ -110,5 +110,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<?= view('front/footer_view') ?>
-
+<?= $this->endSection() ?>
