@@ -1,6 +1,7 @@
 <?php namespace App\Models;
 
 use CodeIgniter\Model;
+use App\Models\ProductoModel; // Importa el ProductoModel
 
 class CarritoModel extends Model
 {
@@ -11,41 +12,76 @@ class CarritoModel extends Model
 
     protected $allowedFields = [
         'id_producto',
-        'id_usuario', // ¡Importante que este campo esté aquí!
+        'id_usuario',
         'nombre_producto',
         'cantidad',
         'precio_unitario',
-        // 'subtotal' NO LO INCLUIMOS AQUÍ porque es una columna GENERADA en la BD.
-        'activo' // Si usas este campo en tu lógica de carrito
+        'activo'
     ];
 
-    protected $returnType     = 'array'; // o 'object' si lo prefieres
+    protected $returnType     = 'array';
 
-    // Habilitar el uso de Timestamps
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at'; // Para soft deletes (no borra el registro, solo lo marca)
+    protected $deletedField  = 'deleted_at';
 
-    // Reglas de validación (puedes añadir más si las necesitas)
     protected $validationRules    = [];
     protected $validationMessages = [];
     protected $skipValidation     = false;
 
-    // Método para obtener los productos del carrito de un usuario específico, con detalles del producto
+    protected $productoModel;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->productoModel = new ProductoModel();
+    }
+
     public function getProductosCarrito($id_usuario)
     {
-        return $this->select('carrito.*, productos.imagen, productos.stock') // Selecciona campos de carrito y detalles del producto
+        return $this->select('carrito.*, productos.imagen, productos.stock as stock_actual')
                     ->join('productos', 'productos.id_producto = carrito.id_producto')
-                    ->where('carrito.id_usuario', $id_usuario) // Filtrar por el ID del usuario
-                    ->where('carrito.activo', 1) // Asumo que quieres mostrar solo ítems activos en el carrito
+                    ->where('carrito.id_usuario', $id_usuario)
+                    ->where('carrito.activo', 1)
                     ->findAll();
     }
 
-
-     public function vaciarCarrito($id_usuario)
+    /**
+     * Vacía el carrito de un usuario y devuelve el stock de los productos.
+     *
+     * @param int $id_usuario El ID del usuario cuyo carrito se va a vaciar.
+     * @return bool True si el carrito se vació correctamente, false en caso contrario.
+     */
+ public function vaciarCarrito(int $id_usuario): bool
     {
-        // Elimina todos los registros del carrito para el id_usuario dado
-        return $this->where('id_usuario', $id_usuario)->delete();
-    }
+        log_message('debug', 'Iniciando vaciarCarrito para usuario ID: ' . $id_usuario);
+
+        // No es necesario obtener los ítems del carrito si solo vamos a eliminarlos
+        // y no vamos a devolver stock.
+        // $items_en_carrito = $this->where('id_usuario', $id_usuario)->findAll();
+
+        // if (empty($items_en_carrito)) {
+        //     log_message('debug', 'Carrito ya vacío para usuario ID: ' . $id_usuario);
+        //     return true; // No hay nada que vaciar
+        // }
+
+        $this->db->transBegin();
+        log_message('debug', 'Transacción de BD iniciada para vaciar carrito.');
+
+        try {
+            // Eliminar todos los ítems del carrito para ese usuario
+            $deleteResult = $this->where('id_usuario', $id_usuario)->delete();
+            log_message('debug', 'Resultado de eliminación de ítems del carrito para usuario ID ' . $id_usuario . ': ' . ($deleteResult ? 'Éxito' : 'Fallo'));
+
+            $this->db->transCommit();
+            log_message('debug', 'Transacción de BD confirmada para vaciar carrito.');
+            return true;
+
+        } catch (\Exception $e) {
+            $this->db->transRollback();
+            log_message('error', 'Error CRÍTICO al vaciar el carrito: ' . $e->getMessage());
+            return false;
+        }
+}
 }
